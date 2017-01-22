@@ -1,140 +1,136 @@
-	html {
-	box-sizing: border-box;
-	font-size: 16px;
-	font-family: sans-serif;
-}
+		html {
+		box-sizing: border-box;
+		font-size: 16px;
+		font-family: sans-serif;
+	}
 
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-	overflow-x: hidden;
-	cursor: default !important;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	outline: none !important;
-	-webkit-transition: all 0.1s ease;
-	transition: all 0.1s ease;
-}
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+		overflow-x: hidden;
+		cursor: default !important;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		outline: none !important;
+		-webkit-transition: all 0.1s ease;
+		transition: all 0.1s ease;
+	}
 
-.main {
-	width: 100%;
-	max-width: 1100px;
-	margin: auto;
-}
+	.main {
+		width: 100%;
+		max-width: 1100px;
+		margin: auto;
+	}
 
-body {
-	background: url('https://i.imgsafe.org/3952864ad8.jpg');
-	background-size: stretch;
-	background-position: top center;
-}
-
-h1 {
-	color: white;
-	text-align: center;
-	font-family: Tahoma;
-	font-size: 8vh;
-	text-shadow: 0 0 20px #550;
-	margin-top: 0;
-}
-
-.keys {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-flow: wrap;
-	flex-flow: wrap;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	overflow: hidden;
-}
-
-.key {
-	border: .1rem solid #FFF;
-	border-radius: .7rem;
-	margin: .7rem 0.5rem 1rem 0.5rem;
-	padding: .2em .2rem;
-	-webkit-transition: all .07s ease;
-	transition: all .07s ease;
-	width: 6rem;
-	text-align: center;
-	color: white;
-	background: darkgrey;
-	background: rgba(0, 0, 0, 0.6);
-	text-shadow: 0 0 .5rem black;
-}
-
-.playing {
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
-	-webkit-filter: blur(2px);
-	filter: blur(2px);
-	border-color: #ff530d;
-	box-shadow: 0 0 1rem #ffc600;
-}
-
-kbd {
-	display: block;
-	font-size: 4rem;
-}
-
-.sound {
-	font-size: 1.2rem;
-	text-transform: uppercase;
-	letter-spacing: .1rem;
-	color: #ffc600;
-}
-
-
-/*Special formatting for mobile devices in landscape mode*/
-
-@media screen and (orientation:landscape) {
 	body {
+		background: url('https://i.imgsafe.org/3952864ad8.jpg');
 		background-size: stretch;
 		background-position: top center;
 	}
+
 	h1 {
-		font-size: 7vw;
+		color: white;
+		text-align: center;
+		font-family: Tahoma;
+		font-size: 8vh;
+		text-shadow: 0 0 20px #550;
+		margin-top: 0;
 	}
+
 	.keys {
-		margin-top: -5%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-flow: wrap;
+		flex-flow: wrap;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		overflow: hidden;
 	}
+
 	.key {
-		flex-basis: 30%;
-		flex-grow: 1;
+		border: .1rem solid #FFF;
+		border-radius: .7rem;
+		margin: .7rem 0.5rem 1rem 0.5rem;
+		padding: .2em .2rem;
+		-webkit-transition: all .07s ease;
+		transition: all .07s ease;
+		width: 6rem;
+		text-align: center;
+		color: white;
+		background: darkgrey;
+		background: rgba(0, 0, 0, 0.6);
+		text-shadow: 0 0 .5rem black;
 	}
+
+	.playing {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+		-webkit-filter: blur(2px);
+		filter: blur(2px);
+		border-color: #ff530d;
+		box-shadow: 0 0 1rem #ffc600;
+	}
+
 	kbd {
-		font-size: 4.5rem;
-	}
-	.sound {
-		font-size: 1.5rem;
-	}
-}
-
-
-/*Special formatting for mobile devices in portrait mode*/
-
-@media screen and (orientation:portrait) {
-	body {
-		background-size: cover;
-		background-attachment: fixed;
-	}
-	h1 {
-		font-size: 9vw;
-	}
-	.key {
-		flex-basis: 30%;
-		flex-grow: 1;
-		margin-top: 5%;
-		padding: 10% 0;
-	}
-	kbd {
-		font-size: 8rem;
-	}
-	.sound {
+		display: block;
 		font-size: 4rem;
 	}
+
+	.sound {
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		letter-spacing: .1rem;
+		color: #ffc600;
+	}
+
+	/*Special formatting for mobile devices in landscape mode*/
+	@media screen and (orientation:landscape) and (max-device-width:1024px) {
+		body {
+			background-size: stretch;
+			background-position: top center;
+		}
+		h1 {
+			font-size: 7vw;
+		}
+		.keys {
+			margin-top: -5%;
+		}
+		.key {
+			flex-basis: 30%;
+			flex-grow: 1;
+		}
+		kbd {
+			font-size: 4.5rem;
+		}
+		.sound {
+			font-size: 1.5rem;
+		}
+	}
+
+	/*Special formatting for mobile devices in portrait mode*/
+	@media screen and (orientation:portrait) and (max-device-width:1024px) {
+		body {
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		h1 {
+			font-size: 9vw;
+		}
+		.key {
+			flex-basis: 30%;
+			flex-grow: 1;
+			margin-top: 5%;
+			padding: 10% 0;
+		}
+		kbd {
+			font-size: 8rem;
+		}
+		.sound {
+			font-size: 4rem;
+		}
