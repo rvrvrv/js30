@@ -92,17 +92,50 @@ kbd {
 
 /*Special formatting for mobile devices in landscape mode*/
 
-@media screen and (orientation:landscape) and (max-device-height: 800px) {
+@media screen and (orientation:landscape) {
 	body {
-		background-size: cover;
+		background-size: stretch;
+		background-position: top center;
 	}
 	h1 {
 		font-size: 7vw;
-		margin: -10px 0 -5px 0;
 	}
 	.keys {
 		margin-top: -5%;
-		-webkit-transform: scale(0.8);
-		transform: scale(0.8);
 	}
+	.key {
+		flex-basis: 30%;
+		flex-grow: 1;
+	}
+	kbd {
+		font-size: 4.5rem;
+	}
+	.sound {
+		font-size: 1.5rem;
+	}
+
 }
+
+/*Special formatting for mobile devices in portrait mode*/
+
+@media screen and (orientation:portrait) {
+	body {
+		background-size: cover;
+		background-attachment: fixed;
+
+	}
+	h1 {
+		font-size: 9vw;
+	}
+	.key {
+		flex-basis: 30%;
+		flex-grow: 1;
+		margin-top: 5%;
+		padding: 10% 0;
+	}
+	kbd {
+		font-size: 8rem;
+	}
+	.sound {
+		font-size: 4rem;
+	}
