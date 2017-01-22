@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  overflow-x: hidden;
+  cursor: default !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none !important;
+  /*border: 1px solid silver !important;*/
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.main {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+body {
+    background: url('https://i.imgsafe.org/3952864ad8.jpg');
+    background-size: stretch;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: Tahoma;
+  font-size: 8vh;
+  display: block;
+  margin-top: 0;
+}
+
+.keys {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.key {
+  border: .1rem solid #FFF;
+  border-radius: .7rem;
+  margin: .5rem;
+  font-size: 1rem;
+  padding: .2em .2rem;
+  transition: all .07s ease;
+  width: 6rem;
+  text-align: center;
+  color: white;
+  background: darkgrey;
+  background: rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 .5rem black;
+}
+
+.playing {
+  transform: scale(1.1);
+  filter: blur(2px);
+  border-color: #ff530d;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
