@@ -1,5 +1,5 @@
   html {
-  	background: #018DED url('https://unsplash.it/1500/1000?image=881&blur=50');
+  	background: #018DED url('https://i.imgsafe.org/62d9591a2e.jpg');
   	background-size: cover;
   	overflow: hidden;
   	font-size: 10px;
@@ -7,13 +7,16 @@
   
   body {
   	min-height: 100vh;
+  	-webkit-box-align: center;
+  	-ms-flex-align: center;
+  	-ms-grid-row-align: center;
   	align-items: center;
   }
   
   .clock {
   	width: 30rem;
   	height: 30rem;
-  	border: 20px solid white;
+  	border: 20px solid #F2E2CA;
   	border-radius: 50%;
   	margin: 50px auto;
   	position: relative;
@@ -25,21 +28,25 @@
   	position: relative;
   	width: 100%;
   	height: 100%;
+  	-webkit-transform: translateY(-3px);
   	transform: translateY(-3px);
   	/* account for the height of the clock hands */
   }
   
   .hand {
+  	position: absolute;
   	width: 50%;
   	height: 6px;
-  	background: black;
-  	position: absolute;
+  	background: #cbade8;
+  	border-radius: 30%;
   	top: 50%;
+  	-webkit-transform-origin: 100%;
   	transform-origin: 100%;
+  	-webkit-transform: rotate(90deg);
   	transform: rotate(90deg);
-  	/*12 PM start*/
-  	transition: all 0.05s;
-  	transition-timing-function: cubic-bezier(0.1, 2, .5, 1);
+  	-webkit-transition: all ease-in 1s;
+  	transition: all ease-in 1s;
+  	box-shadow: 0 0 1px rgba(255, 255, 255, 0);
   }
   
   .hour-hand {
@@ -48,7 +55,12 @@
   }
   
   .second-hand {
-  	height: 3px;
+  	height: 4px;
   	width: 48%;
   	left: 2%;
+  	background: #99006d;
+  	-webkit-transition: all 0.05s;
+  	transition: all 0.05s;
+  	-webkit-transition-timing-function: cubic-bezier(0.1, 2, .5, 1) !important;
+  	transition-timing-function: cubic-bezier(0.1, 2, .5, 1) !important;
   }
