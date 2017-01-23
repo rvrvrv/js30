@@ -1,6 +1,9 @@
   html {
-  	background: #018DED url('https://i.imgsafe.org/62d9591a2e.jpg');
-  	background-size: cover;
+  	background: #5e1f5c;
+  	background: -moz-linear-gradient(-45deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
+  	background: -webkit-linear-gradient(-45deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
+  	background: linear-gradient(135deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
+  	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#5e1f5c', endColorstr='#4f2f93', GradientType=1);
   	overflow: hidden;
   	font-size: 10px;
   }
@@ -16,12 +19,12 @@
   .clock {
   	width: 30rem;
   	height: 30rem;
-  	border: 20px solid #F2E2CA;
+  	border: 20px solid #F6E6FF;
   	border-radius: 50%;
   	margin: 50px auto;
   	position: relative;
   	padding: 2rem;
-  	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+  	box-shadow: 0 0 6px 6px #34003b, inset 0 0 8px 8px #464047, inset 0 0 50px black, 0 0 10px 10px rgba(0, 0, 0, 0.2);
   }
   
   .clock-face {
@@ -50,8 +53,8 @@
   }
   
   .hour-hand {
-  	width: 35%;
-  	left: 15%;
+  	width: 32%;
+  	left: 18%;
   }
   
   .second-hand {
