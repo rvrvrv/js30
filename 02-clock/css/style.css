@@ -1,14 +1,13 @@
   html {
-  	background: #5e1f5c;
-  	background: -moz-linear-gradient(-45deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
-  	background: -webkit-linear-gradient(-45deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
-  	background: linear-gradient(135deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
-  	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#5e1f5c', endColorstr='#4f2f93', GradientType=1);
   	overflow: hidden;
-  	font-size: 10px;
+  	font-size: 2vw;
   }
   
   body {
+  	background: #5e1f5c;
+  	background: -webkit-linear-gradient(-45deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
+  	background: -webkit-linear-gradient(315deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
+  	background: linear-gradient(135deg, #5e1f5c 0%, #240428 51%, #4f2f93 100%);
   	min-height: 100vh;
   	-webkit-box-align: center;
   	-ms-flex-align: center;
@@ -21,25 +20,24 @@
   	height: 30rem;
   	border: 20px solid #F6E6FF;
   	border-radius: 50%;
-  	margin: 50px auto;
+  	margin: 3% auto;
   	position: relative;
   	padding: 2rem;
-  	box-shadow: 0 0 6px 6px #34003b, inset 0 0 8px 8px #464047, inset 0 0 50px black, 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  	box-shadow: 0 0 6px 6px #34003b, inset 0 0 5px 8px #344044, inset 0 0 40px black;
   }
   
   .clock-face {
   	position: relative;
   	width: 100%;
   	height: 100%;
-  	-webkit-transform: translateY(-3px);
-  	transform: translateY(-3px);
-  	/* account for the height of the clock hands */
+  	-webkit-transform: translateY(-4px);
+  	transform: translateY(-4px);
   }
   
   .hand {
   	position: absolute;
   	width: 50%;
-  	height: 6px;
+  	height: 8px;
   	background: #cbade8;
   	border-radius: 30%;
   	top: 50%;
@@ -66,4 +64,17 @@
   	transition: all 0.05s;
   	-webkit-transition-timing-function: cubic-bezier(0.1, 2, .5, 1) !important;
   	transition-timing-function: cubic-bezier(0.1, 2, .5, 1) !important;
+  }
+
+  .center-circle {
+  	position: relative;
+  	top: 46.5%;
+  	left: 46.5%;
+  	width: 7%;
+  	height: 7%;
+  	border-radius: 100%;
+  	background: #202;
+  	background: -webkit-radial-gradient(#606, #303);
+  	background: radial-gradient(#606, #303);
+  	z-index: 999;
   }
