@@ -16,6 +16,7 @@ function toggleActive(e) {
 		this.classList.toggle('open-active');
 	}
 }
+
 //Listen for clicks on each panel
 panels.forEach(panel => panel.addEventListener('click', toggleOpen));
 //Listen for end of transition on each panel
