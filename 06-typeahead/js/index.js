@@ -22,7 +22,7 @@ function findMatches(word) {
 //Display matching cities
 function displayMatches() {
 	//Auto-capitalize user's entry
-
+	$('.search').css('text-transform', 'capitalize');
 	$('.suggestions').css('text-transform', 'capitalize');
 	//Store results in array
 	const matchArr = findMatches(this.value);
