@@ -1,0 +1,25 @@
+  html,
+  body {
+  	margin: 0;
+  	overflow: hidden;
+  	cursor: default;
+  }
+
+  button {
+  	position: fixed;
+  	right: 0;
+  	background: #261a70;
+  	color: #f5fdfa;
+  	font-size: 26px;
+  	padding: 1%;
+  	border-radius: 5px;
+  }
+
+  button:hover {
+  	background: #503fbc;
+  	color: #fff;
+  }
+
+  button:focus {
+  	outline: none;
+  }
