@@ -47,6 +47,7 @@
     	margin: 0;
     	padding: 0;
     	position: relative;
+		 z-index: 2;
     }
 
     .suggestions li {
@@ -106,6 +107,7 @@
     	position: absolute;
     	bottom: 0;
     	color: sandybrown;
+		 z-index: 1;
     }
 
     footer a {
