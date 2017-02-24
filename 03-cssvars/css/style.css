@@ -2,14 +2,15 @@
 	--base: #aaffaa;
 	--spacing: 10px;
 	--blur: 10px;
+	height: 100%;
 }
 
 body {
-	background: #194058;
+	background: #194058 no-repeat fixed;
+	background: -webkit-linear-gradient(bottom, #194058 0%,#23538a 100%);
+	background: linear-gradient(to top, #194058 0%,#23538a 100%);
 	color: white;
-	font-family: 'helvetica neue', sans-serif;
-	font-weight: 100;
-	font-size: 24px;
+	font: 100 24px 'helvetica neue', sans-serif;
 	text-align: center;
 }
 
