@@ -27,9 +27,7 @@
 	}
 
 	body {
-		background: url('https://i.imgsafe.org/3952864ad8.jpg');
-		background-size: stretch;
-		background-position: top center;
+      background: #000 url('https://i.imgsafe.org/3952864ad8.jpg') no-repeat fixed top center;
 	}
 
 	h1 {
