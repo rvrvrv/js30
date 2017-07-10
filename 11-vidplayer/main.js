@@ -15,7 +15,8 @@ function togglePlay() {
 
 //Update play/pause button
 function updateBtn() {
-    toggle.textContent = this.paused ? '►' : '❚❚';
+    let icon = this.paused ? '<i class="fa fa-play"></i>' : '<i class="fa fa-pause"></i>';
+    toggle.innerHTML = icon;
 }
 
 //Skip video forward or backward
