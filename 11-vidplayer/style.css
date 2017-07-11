@@ -161,9 +161,6 @@ body {
     flex-basis: 0%;
 }
 
-
-/* unholy css to style input type="range" */
-
 input[type=range] {
     -webkit-appearance: none;
     background: transparent;
