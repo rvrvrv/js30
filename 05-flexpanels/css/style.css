@@ -61,23 +61,23 @@
     }
 
     .panel1 {
-    	background-image: url('https://c1.staticflickr.com/8/7041/7134451919_93ee32fdf9_b.jpg');
+    	background-image: url('https://rvrvrv.github.io/img/fp1-birds.jpg');
     }
 
     .panel2 {
-    	background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/98/Scott_Gives_Salute_-_GPN-2000-001114.jpg');
+    	background-image: url('https://rvrvrv.github.io/img/fp2-moon.jpg');
     }
 
     .panel3 {
-    	background-image: url('https://static.pexels.com/photos/4760/waves-surfing-surfers.jpg');
+    	background-image: url('https://rvrvrv.github.io/img/fp3-surf.jpg');
     }
 
     .panel4 {
-    	background-image: url('https://static.pexels.com/photos/299903/pexels-photo-299903.jpeg');
+    	background-image: url('https://rvrvrv.github.io/img/fp4-hike.jpg');
     }
 
     .panel5 {
-    	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Biegn%C4%85ce_zaj%C4%85ce_szaraki_20140427_2184.jpg/1280px-Biegn%C4%85ce_zaj%C4%85ce_szaraki_20140427_2184.jpg');
+    	background-image: url('https://rvrvrv.github.io/img/fp5-rabbits.jpg');
     }
 
     .panel>* {
