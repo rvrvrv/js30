@@ -1,5 +1,5 @@
 /*jshint browser: true, esversion: 6*/
-/* global $, console, cornify_add */
+/* global console, cornify_add */
 
 const pressed = [];
 const secretCode = 'rainbow';
