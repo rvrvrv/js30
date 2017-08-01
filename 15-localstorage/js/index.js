@@ -1,6 +1,7 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
-const items = [];
+const items = JSON.parse(localStorage.getItem('items')) || [];
+
 
 //Add new item to items array
 function addItem(e) {
@@ -8,7 +9,7 @@ function addItem(e) {
     //Get and store user's item
     const text = (this.querySelector('[name=item]')).value;
     const item = {
-        text, //Shorthand to store 'text' as 'text'
+        text, //Shorthand to store 'const text' as 'item.text'
         done: false
     };
     //Clear add-item field
@@ -17,6 +18,8 @@ function addItem(e) {
     items.push(item);
     //Generate HTML
     populateList(items, itemsList);
+    //Store list in localStorage
+    localStorage.setItem('items', JSON.stringify(items));
 }
 
 //Generate HTML for list of items
@@ -32,4 +35,22 @@ function populateList(plates = [], platesList) {
     }).join(''); //Return mapped array as string (HTML)
 }
 
+//Change item's done (checked) status
+function toggleDone(e) {
+    if (!e.target.matches('input')) return; //Ignore non-checkbox clicks
+    //Get index of clicked item
+    let index = e.target.dataset.index;
+    //Toggle done property of clicked item
+    items[index].done = !items[index].done;
+    //Update localStorage and list
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+    console.table(items);
+}
+
+
 addItems.addEventListener('submit', addItem);
+itemsList.addEventListener('click', toggleDone);
+
+//Upon page load, populate list from localStorage
+populateList(items, itemsList);
