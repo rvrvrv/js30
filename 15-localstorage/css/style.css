@@ -75,11 +75,25 @@ h2 {
 }
 
 .add-items {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
-.add-items input {
+.add-items input,
+.bottom-btns button {
   padding: 10px;
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+button {
+  margin: 5px;
+  transition: all .2s;
+}
+
+button:hover {
+  background: #fff;
+}
+
+button:active {
+  box-shadow: 0 0 8px #000;
 }

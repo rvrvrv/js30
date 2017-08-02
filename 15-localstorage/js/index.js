@@ -1,6 +1,7 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
 const items = JSON.parse(localStorage.getItem('items')) || [];
+const allBtns = document.querySelectorAll('.all-btn');
 
 
 //Add new item to items array
@@ -48,9 +49,16 @@ function toggleDone(e) {
     console.table(items);
 }
 
+//Clear, check, or uncheck all items
+function affectAll(e) {
+    let task = e.target.dataset.task;
+    console.log(task);
+}
+
 
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
+allBtns.forEach(btn => btn.addEventListener('click', affectAll));
 
 //Upon page load, populate list from localStorage
 populateList(items, itemsList);
