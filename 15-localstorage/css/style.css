@@ -1,12 +1,12 @@
 html {
   box-sizing: border-box;
-  background: #000 url('http://wes.io/hx9M/oh-la-la.jpg') center/cover no-repeat;
+  background: #000 url('https://rvrvrv.github.io/img/tapas.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 *,
@@ -15,9 +15,8 @@ html {
   box-sizing: inherit;
 }
 
-svg {
-  fill: white;
-  background: rgba(0, 0, 0, 0.1);
+img {
+  background: rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 50%;
   width: 200px;
