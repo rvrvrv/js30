@@ -1,0 +1,14 @@
+html {
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#000;
+  font-size: 3.4em;
+  text-transform: uppercase;
+}
