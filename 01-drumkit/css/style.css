@@ -31,7 +31,7 @@
 	}
 
 	h1 {
-		color: white;
+		color: #fff;
 		text-align: center;
 		font-family: Tahoma;
 		font-size: 8vh;
@@ -52,7 +52,7 @@
 	}
 
 	.key {
-		border: .1rem solid #FFF;
+		border: .1rem solid #fff;
 		border-radius: .7rem;
 		margin: .7rem 0.5rem 1rem 0.5rem;
 		padding: .2em .2rem;
@@ -60,7 +60,7 @@
 		transition: all .07s ease;
 		width: 6rem;
 		text-align: center;
-		color: white;
+		color: #fff;
 		background: darkgrey;
 		background: rgba(0, 0, 0, 0.6);
 		text-shadow: 0 0 .5rem black;
@@ -131,4 +131,5 @@
 		}
 		.sound {
 			font-size: 4rem;
-		}
+    }
+  }
