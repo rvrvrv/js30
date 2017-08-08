@@ -1,135 +1,135 @@
   html {
-		box-sizing: border-box;
-		font-size: 16px;
-		font-family: sans-serif;
-	}
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+    overflow-x: hidden;
+    outline: none !important;
+  }
+  
+  body {
+    background: #000 url('https://rvrvrv.github.io/img/crowd.jpg') center / cover no-repeat fixed;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .main {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  h1 {
+    color: #fff;
+    font-family: Tahoma;
+    font-size: 8vh;
+    text-shadow: 0 0 20px #550;
+    margin-top: 0;
+  }
+  
+  .keys {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+  
+  .key {
+    cursor: pointer;
+    border: .1rem solid #fff;
+    border-radius: .7rem;
+    margin: .7rem 0.5rem 1rem 0.5rem;
+    padding: .2em .2rem;
+    -webkit-transition: all .07s ease;
+    transition: all .07s ease;
+    width: 6rem;
+    color: #fff;
+    background: darkgrey;
+    background: rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 .5rem black;
+  }
+  
+  .playing {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    border-color: #ff530d;
+    box-shadow: 0 0 1rem #ffc600;
+  }
+  
+  kbd {
+    display: block;
+    font-size: 4rem;
+  }
+  
+  .sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #ffc600;
+  }
 
-	*,
-	*:before,
-	*:after {
-		box-sizing: inherit;
-		overflow-x: hidden;
-		cursor: default !important;
-		-webkit-touch-callout: none;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		outline: none !important;
-		-webkit-transition: all 0.1s ease;
-		transition: all 0.1s ease;
-	}
+  /*Mobile devices*/
+  @media screen and (max-device-width:1024px) {
+    .key {
+      flex-basis: 30%;
+      flex-grow: 1;
+    }
+    kbd {
+      display: none;
+    }
+  }
 
-	.main {
-		width: 100%;
-		max-width: 1100px;
-		margin: auto;
-	}
-
-	body {
-		background: #000 url('https://rvrvrv.github.io/img/crowd.jpg') center / cover no-repeat fixed;
-	}
-
-	h1 {
-		color: #fff;
-		text-align: center;
-		font-family: Tahoma;
-		font-size: 8vh;
-		text-shadow: 0 0 20px #550;
-		margin-top: 0;
-	}
-
-	.keys {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-flow: wrap;
-		flex-flow: wrap;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		justify-content: center;
-		overflow: hidden;
-	}
-
-	.key {
-		border: .1rem solid #fff;
-		border-radius: .7rem;
-		margin: .7rem 0.5rem 1rem 0.5rem;
-		padding: .2em .2rem;
-		-webkit-transition: all .07s ease;
-		transition: all .07s ease;
-		width: 6rem;
-		text-align: center;
-		color: #fff;
-		background: darkgrey;
-		background: rgba(0, 0, 0, 0.6);
-		text-shadow: 0 0 .5rem black;
-	}
-
-	.playing {
-		-webkit-transform: scale(1.1);
-		transform: scale(1.1);
-		-webkit-filter: blur(2px);
-		filter: blur(2px);
-		border-color: #ff530d;
-		box-shadow: 0 0 1rem #ffc600;
-	}
-
-	kbd {
-		display: block;
-		font-size: 4rem;
-	}
-
-	.sound {
-		font-size: 1.2rem;
-		text-transform: uppercase;
-		letter-spacing: .1rem;
-		color: #ffc600;
-	}
-
-	/*Special formatting for mobile devices in landscape mode*/
-	@media screen and (orientation:landscape) and (max-device-width:1024px) {
-		body {
-			background-size: stretch;
-			background-position: top center;
-		}
-		h1 {
-			font-size: 7vw;
-		}
-		.keys {
-			margin-top: -5%;
-		}
-		.key {
-			flex-basis: 30%;
-			flex-grow: 1;
-		}
-		kbd {
-			font-size: 4.5rem;
-		}
-		.sound {
-			font-size: 1.5rem;
-		}
-	}
-
-	/*Special formatting for mobile devices in portrait mode*/
-	@media screen and (orientation:portrait) and (max-device-width:1024px) {
-		body {
-			background-size: cover;
-			background-attachment: fixed;
-		}
-		h1 {
-			font-size: 9vw;
-		}
-		.key {
-			flex-basis: 30%;
-			flex-grow: 1;
-			margin-top: 2%;
-			padding: 8% 0;
-		}
-		kbd {
-			font-size: 8rem;
-		}
-		.sound {
-			font-size: 4rem;
+  /*Mobile devices in landscape mode*/
+  @media screen and (orientation:landscape) and (max-device-width:1024px) {
+    body {
+      background-size: stretch;
+      background-position: top center;
+    }
+    h1 {
+      font-size: 7vw;
+    }
+    .keys {
+      margin-top: -2%;
+    }
+    .key {
+      margin-top: 0;
+      padding: 6vh;
+    }
+    .sound {
+      font-size: 1rem;
+    }
+  }
+  
+  /*Mobile devices in portrait mode*/
+  @media screen and (orientation:portrait) and (max-device-width:1024px) {
+    body {
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    h1 {
+      font-size: 9vw;
+    }
+    .key {
+      margin-top: 0;
+      padding: 8% 5%;
+    }
+    .sound {
+      font-size: 4vh;
     }
   }
