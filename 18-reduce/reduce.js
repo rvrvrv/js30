@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Store all nodes with data-time attribute in array
-  const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+  // Display data-time attribute after each video listing
+  const vidItems = document.querySelectorAll('[data-time]');
+  vidItems.forEach(vid => vid.innerHTML += `:  <b>${vid.dataset.time}</b>`);
+  // Store all times from video listings
+  const timeNodes = Array.from(vidItems);
   // Get time value (in seconds) from node array
   const seconds = timeNodes
     .map(node => node.dataset.time) // Get time values
@@ -19,5 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
   secondsLeft %= 60; // Update how many seconds are left
   // Store and display results
   const totalTime = `${hours}:${mins}:${secondsLeft}`;
-  document.getElementById('total').innerText = `Total time: ${totalTime}`;
+  document.getElementById('total').innerHTML = `Total time: <b>${totalTime}</b>`;
 });
