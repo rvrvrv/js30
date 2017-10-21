@@ -1,0 +1,92 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Tahoma', sans-serif;
+  background:#035;
+  color: #fff;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.photobooth {
+  background: #000;
+  color: #fff;
+  max-width:55em;
+  margin: 1rem auto;
+  border-radius:6px;
+}
+
+.photobooth:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  font-size: .9em;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  width: 9em;
+  border: 0;
+  color: #fff;
+  background: rgb(43, 97, 133);
+  box-shadow: 0 2px 1px 0 rgba(0,0,0,0.3);
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+button:hover {
+  background: #035;
+}
+
+button:active {
+  background: #03a;
+}
+
+.btn-red {
+  background: #a00;
+}
+
+.btn-red:hover {
+  background: #400;
+}
+
+.btn-red:active {
+  background: #c00;
+}
+
+.video-orig {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width:15%;
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.video-canvas {
+  width:100%;
+  float:left;
+  margin: 10px auto;
+}
+
+.photo-roll {
+  padding:.5em;
+  white-space: nowrap;
+  overflow-x: auto;
+  user-select: none;
+}
+.photo-roll img {
+  width:100px;
+  padding:0.5em;
+}
