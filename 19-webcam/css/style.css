@@ -11,8 +11,9 @@ html {
 
 .photobooth {
   background: #000;
+  box-shadow: 0 0 60px #00a;
   color: #fff;
-  max-width:55em;
+  max-width:800px;
   margin: 1rem auto;
   border-radius:6px;
 }
@@ -35,34 +36,51 @@ button {
   display: block;
   margin: 10px auto;
   padding: 5px;
-  width: 9em;
+  min-width: 8em;
   border: 0;
+  border-radius: 5px;
   color: #fff;
-  background: rgb(43, 97, 133);
-  box-shadow: 0 2px 1px 0 rgba(0,0,0,0.3);
+  background: #004;
   font-size: 1.1em;
   cursor: pointer;
-  transition: background .3s ease;
+  transition: all .3s ease;
 }
 
 button:hover {
-  background: #035;
+  background: #009;
 }
 
 button:active {
-  background: #03a;
+  background: #00c;
 }
 
-.btn-red {
-  background: #a00;
+.fx-on {
+  box-shadow: 0 0 15px #fff;
+  font-style: italic;
 }
 
-.btn-red:hover {
+.fx-red {
   background: #400;
 }
 
-.btn-red:active {
-  background: #c00;
+.fx-red:hover {
+  background: #a00;
+}
+
+.fx-red:active {
+  background: #e00;
+}
+
+.fx-green {
+  background: #040;
+}
+
+.fx-green:hover {
+  background: #060;
+}
+
+.fx-green:active {
+  background: #090;
 }
 
 .video-orig {

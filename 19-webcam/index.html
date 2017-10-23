@@ -13,27 +13,28 @@
     <h1>Photo Booth</h1>
     <div class="controls">
        <div class="rgb">
-         <table width="80%">
+         <table>
            <th colspan="4">Green Screen Effect Threshold Values</th>
            <tr>
              <td><label for="rmin">Red Min:</label></td>
              <td><input type="range" min=0 max=255 name="rmin"></td>
              <td><label for="rmax">Red Max:</label></td>
              <td><input type="range" min=0 max=255 name="rmax"></td>
-             <td><button class="btn-red" onClick="chooseEffect('red')">Red Effect</button></td>
+             <td><button class="fx-btn fx-red" onClick="chooseEffect('red')">Red Effect</button></td>
           </tr>
           <tr>
               <td><label for="gmin">Green Min:</label></td>
-              <td><input type="range" min=0 max=255 name="gmin"></td>
+              <td><input type="range" min=0 max=255 value=0 name="gmin"></td>
               <td><label for="gmax">Green Max:</label></td>
-              <td><input type="range" min=0 max=255 name="gmax"></td>
+              <td><input type="range" min=0 max=255 value=255 name="gmax"></td>
+              <td><button class="fx-btn fx-green" onClick="chooseEffect('green')">Green Screen</button></td>
            </tr>
            <tr>
               <td><label for="bmin">Blue Min:</label></td>
               <td><input type="range" min=0 max=255 name="bmin"></td>
               <td><label for="bmax">Blue Max:</label></td>
               <td><input type="range" min=0 max=255 name="bmax"></td>
-              <td><button onClick="chooseEffect('rgb')">RGB Split</button></td>
+              <td><button class="fx-btn fx-rgb"onClick="chooseEffect('rgb')">RGB Split</button></td>
            </tr>
         </table>
       </div>

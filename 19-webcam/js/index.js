@@ -3,8 +3,8 @@ const canvas = document.querySelector('.video-canvas');
 const ctx = canvas.getContext('2d');
 const strip = document.querySelector('.photo-roll');
 const snap = document.getElementById('shutterSound');
-let vidWidth;
-let vidHeight;
+let vidWidth, vidHeight, vidEffect;
+
 
 // Make all pixels more red
 function redEffect(pixels) {
@@ -55,24 +55,34 @@ function greenScreen(pixels) {
 }
 
 // Paint video stream on canvas
-function paintToCanvas(effect) {
+function paintToCanvas() {
   // Paint on canvas every 16 ms
   const painting = setInterval(() => {
-    // If an effect is called, clear current setInterval
-    if (effect) clearInterval(painting);
     ctx.drawImage(video, 0, 0, vidWidth, vidHeight);
     let pixels = ctx.getImageData(0, 0, vidWidth, vidHeight);
-    if (effect === 'red') pixels = redEffect(pixels);
-    else if (effect === 'rgb') pixels = rgbSplit(pixels);
-    else pixels = greenScreen(pixels);
+    if (vidEffect === 'red') pixels = redEffect(pixels);
+    else if (vidEffect === 'rgb') pixels = rgbSplit(pixels);
+    else if (vidEffect === 'green') pixels = greenScreen(pixels);
     ctx.putImageData(pixels, 0, 0);
-    console.log('running...');
   }, 1000);
 }
 
 // Choose an effect
 function chooseEffect(effect) {
-  paintToCanvas(effect);
+  // If user selects active effect, disable it
+  if (effect === vidEffect) {
+    vidEffect = null;
+    document.getElementsByClassName(`fx-${effect}`)[0].classList.remove('fx-on');
+  }
+  // Otherwise, activate the chosen effect
+  else {
+    vidEffect = effect;
+    // Update UI
+    for (let i = 0; i < 3; i++) {
+      document.getElementsByClassName('fx-btn')[i].classList.remove('fx-on');
+    }
+    document.getElementsByClassName(`fx-${effect}`)[0].classList.add('fx-on');
+  }
 }
 
 // Retrieve video feed and eventually send to canvas
