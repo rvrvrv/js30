@@ -64,7 +64,7 @@ function paintToCanvas() {
     else if (vidEffect === 'rgb') pixels = rgbSplit(pixels);
     else if (vidEffect === 'green') pixels = greenScreen(pixels);
     ctx.putImageData(pixels, 0, 0);
-  }, 1000);
+  }, 16);
 }
 
 // Choose an effect
