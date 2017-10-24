@@ -1,8 +1,9 @@
 html {
   box-sizing: border-box;
-  font-family: 'Tahoma', sans-serif;
   background:#035;
   color: #fff;
+  font-family: 'Tahoma', sans-serif;
+  text-align: center;
 }
 
 *, *:before, *:after {
@@ -24,16 +25,25 @@ html {
   clear: both;
 }
 
-h1 {
-  text-align: center;
+.controls {
+  font-family: monospace;
+  font-size: 1.2rem;
+  padding: 5px;
 }
 
-table {
-  font-size: .9em;
+.controls button {
+  font-size: .8rem;
+}
+
+td:nth-child(odd) {
+  text-align: right;
+}
+
+input[type=range] {
+  width: 50px;
 }
 
 button {
-  display: block;
   margin: 10px auto;
   padding: 5px;
   min-width: 8em;
@@ -41,7 +51,7 @@ button {
   border-radius: 5px;
   color: #fff;
   background: #004;
-  font-size: 1.1em;
+  font-size: 1em;
   cursor: pointer;
   transition: all .3s ease;
 }
@@ -81,6 +91,10 @@ button:active {
 
 .fx-green:active {
   background: #090;
+}
+
+.take-photo {
+  text-align: center;
 }
 
 .video-orig {

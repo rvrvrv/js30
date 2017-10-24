@@ -12,35 +12,35 @@
   <div class="photobooth">
     <h1>Photo Booth</h1>
     <div class="controls">
-       <div class="rgb">
-         <table>
-           <th colspan="4">Green Screen Effect Threshold Values</th>
+         <table align="center">
+           <th colspan="4">Green Screen Threshold Values</th>
            <tr>
-             <td><label for="rmin">Red Min:</label></td>
+             <td><label for="rmin">R Min:</label></td>
              <td><input type="range" min=0 max=255 name="rmin"></td>
-             <td><label for="rmax">Red Max:</label></td>
+             <td><label for="rmax">R Max:</label></td>
              <td><input type="range" min=0 max=255 name="rmax"></td>
              <td><button class="fx-btn fx-red" onClick="chooseEffect('red')">Red Effect</button></td>
           </tr>
           <tr>
-              <td><label for="gmin">Green Min:</label></td>
+              <td><label for="gmin">G Min:</label></td>
               <td><input type="range" min=0 max=255 value=0 name="gmin"></td>
-              <td><label for="gmax">Green Max:</label></td>
+              <td><label for="gmax">G Max:</label></td>
               <td><input type="range" min=0 max=255 value=255 name="gmax"></td>
               <td><button class="fx-btn fx-green" onClick="chooseEffect('green')">Green Screen</button></td>
            </tr>
            <tr>
-              <td><label for="bmin">Blue Min:</label></td>
+              <td><label for="bmin">B Min:</label></td>
               <td><input type="range" min=0 max=255 name="bmin"></td>
-              <td><label for="bmax">Blue Max:</label></td>
+              <td><label for="bmax">B Max:</label></td>
               <td><input type="range" min=0 max=255 name="bmax"></td>
-              <td><button class="fx-btn fx-rgb"onClick="chooseEffect('rgb')">RGB Split</button></td>
+              <td><button class="fx-btn fx-rgb" onClick="chooseEffect('rgb')">RGB Split</button></td>
            </tr>
         </table>
-      </div>
     </div>
     <canvas class="video-canvas"></canvas>
-    <button onClick="takePhoto()">Take Photo</button>
+    <div class="take-photo">
+      <button class="photo-btn" onClick="takePhoto()">Take Photo</button>
+    </div>
     <div class="photo-roll"></div>
   </div>
   <audio id="shutterSound" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
