@@ -14,7 +14,6 @@ notebook.appendChild(p);
 
 // Listen to and process results
 recognition.addEventListener('result', (e) => {
-  console.log(e.results);
   // First, convert array-like results to array
   const transcript = Array.from(e.results)
     // Store current speech
@@ -34,11 +33,10 @@ recognition.addEventListener('result', (e) => {
     document.body.style.backgroundColor = `hsl(${Math.floor(Math.random() * 360)}, 100%, 20%)`;
   }
 
-  // Secret phrase to flash the background
-  if (transcript.includes('magic')) {
-    for (let i = 0; i < 20; i++) {
-      document.body.style.backgroundColor = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
-    }
+  // Secret word to flash the background
+  if (transcript.includes('Magic')) {
+    document.body.classList.add('magic'); // 'magic' class triggers animation
+    setTimeout(() => document.body.classList.remove('magic'), 2000); // Remove class after animation completes
   }
 });
 
@@ -47,4 +45,3 @@ recognition.addEventListener('end', recognition.start);
 
 // Begin speech recognition
 recognition.start();
-
