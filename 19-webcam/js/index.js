@@ -125,6 +125,13 @@ function takePhoto() {
   strip.insertBefore(link, strip.firstChild);
 }
 
-// Load video upon page startup
-document.addEventListener('DOMContentLoaded', getVideo);
+// Check browser type
+function checkBrowser() {
+  // If mobile device, don't capture video
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+    document.body.innerHTML = 'Please visit the Photo Booth on a desktop or laptop device.';
+  } else getVideo(); // Otherwise, continue with video capture
+}
 
+// Upon page startup, check browser type
+document.addEventListener('DOMContentLoaded', checkBrowser);
