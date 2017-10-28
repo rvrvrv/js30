@@ -1,0 +1,49 @@
+    html {
+      font-size: 100px;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      height:100%;
+      overflow: hidden;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background:
+        radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+      background-color:#282828;
+      background-size:16px 16px;
+      background-attachment: fixed;
+    }
+
+    .arrow {
+      margin-top: 10vh;
+      width:250px;
+      transition: all 0.2s;
+      transform:rotate(0deg);
+      display: inline-block;
+    }
+
+    h1, h3 {
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      letter-spacing: 1px;
+      font-size: 60px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .units {
+      font-size: 15px;
+    }
