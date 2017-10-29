@@ -4,8 +4,8 @@ const loc = document.getElementsByClassName('location')[0];
 
 // Monitor accelerometer data
 navigator.geolocation.watchPosition((d) => {
-  // Point compass
-  arrow.style.transform = `rotate(${d.coords.heading}deg)`;
+  // Point compass after entrance animation
+  setTimeout(() => { arrow.style.transform = `rotate(${d.coords.heading}deg)`; }, 3000);
   // Display speed
   speed.textContent = d.coords.speed ? `${d.coords.speed} km/h` : '';
   // Display location
