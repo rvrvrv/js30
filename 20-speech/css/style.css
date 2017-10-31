@@ -3,33 +3,58 @@ html {
 }
 
 body {
-  background-color:hsl(60, 100%, 8%);
-  font: 200 20px 'helvetica neue';
+  background-color: hsl(60, 100%, 8%);
+  font: 200 20px Tahoma;
+  -webkit-transition: background-color .5s;
   transition: background-color .5s;
   height: 100%;
 }
 
-h2, h4 {
+.top {
   color: #fff;
   text-align: center;
-  font-family: Tahoma;
 }
 
-h4 {
-  margin: 5%;
+button {
+  box-shadow: inset 0px 1px 0px 0px #a6827e;
+  background: -webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+  background-color: #7d5d3b;
+  border-radius: 3px;
+  border: 1px solid #54381e;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 6px 24px;
+  text-shadow: 0px 1px 0px #4d3534;
+  text-align: center;
+  font-size: 2rem;
+  -webkit-transition: box-shadow .2s;
+  transition: box-shadow .2s;
+}
+
+button:hover {
+  background: -webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+  background-color: #634b30;
+  box-shadow: 0 0 3px #fff;
+}
+
+button:active {
+  box-shadow: 0 0 8px #fff;
 }
 
 .notebook {
-  max-width:500px;
-  margin:50px auto;
-  background:white;
-  border-radius:5px;
-  box-shadow:10px 10px 0 rgba(0,0,0,0.1);
-  padding:1rem 2rem 1rem 5rem;
+  max-width: 500px;
+  margin: 50px auto;
+  position: relative;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem 1rem 5rem;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
   background-size: 100% 3rem;
-  position: relative;
-  line-height:3rem;
+  font-family: 'helvetica neue';
+  line-height: 3rem;
 }
 
 p {
@@ -48,11 +73,11 @@ p {
 }
 
 .magic {
-	-webkit-animation: color-change 1s linear 2 both;
-	        animation: color-change 1s linear 2 both;
+  -webkit-animation: color-change 1s linear 2 both;
+          animation: color-change 1s linear 2 both;
 }
 
- @-webkit-keyframes color-change {
+@-webkit-keyframes color-change {
   0% {
     background-color: hsl(0, 100%, 50%);
   }
@@ -69,6 +94,7 @@ p {
     background-color: hsl(270, 100%, 50%);
   }
 }
+
 @keyframes color-change {
   0% {
     background-color: hsl(0, 100%, 50%);
