@@ -1,0 +1,61 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(45deg, hsla(340, 100%, 80%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
+  linear-gradient(135deg, hsla(225, 95%, 70%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
+  linear-gradient(225deg, hsla(140, 90%, 70%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
+  linear-gradient(315deg, hsla(35, 95%, 70%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+}
+
+.wrapper {
+  font-size: 20px;
+  line-height: 2;
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-radius: 20px;
+  background: rgba(0,0,0,.05);
+}
+
+.highlight {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: block;
+  transition: transform .25s ease-out, height .3s, width .3s, opacity .01s;
+  border-bottom: 2px solid white;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: inline-block;
+  margin: 0 20px;
+  padding: 5px;
+  color: black;
+}
