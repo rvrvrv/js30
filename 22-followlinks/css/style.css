@@ -34,6 +34,7 @@ body {
 a {
   text-decoration: none;
   color: black;
+  cursor: pointer;
   border-radius: 7px;
   transition: background .5s;
 }
