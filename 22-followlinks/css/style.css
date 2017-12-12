@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *, *:before, *:after {
@@ -10,11 +11,16 @@ body {
   font-family: sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
-  margin: 0;
+  margin: 0 auto;
+  background-color: #fdd;
   background: linear-gradient(45deg, hsla(340, 100%, 80%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
   linear-gradient(135deg, hsla(225, 95%, 70%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
   linear-gradient(225deg, hsla(140, 90%, 70%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
   linear-gradient(315deg, hsla(35, 95%, 70%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+}
+
+.wrapper, .menu {
+  width: 95vw;
 }
 
 .wrapper {
@@ -28,7 +34,11 @@ body {
 a {
   text-decoration: none;
   color: black;
-  border-radius: 20px;
+  border-radius: 7px;
+  transition: background .5s;
+}
+
+a:not(:hover) {
   background: rgba(0,0,0,.05);
 }
 
@@ -48,14 +58,14 @@ a {
 .menu {
   display: flex;
   justify-content: center;
-  margin: 100px 0;
+  margin: 3em auto;
   padding: 0;
   list-style: none;
 }
 
 .menu a {
   display: inline-block;
-  margin: 0 20px;
-  padding: 5px;
+  margin: 0 .5em;
+  padding: .3em;
   color: black;
 }
