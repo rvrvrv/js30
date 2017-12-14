@@ -1,0 +1,102 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color:#04b;
+  display:flex;
+  min-height: 100vh;
+  align-items: center;
+  background-image:
+  radial-gradient(circle at 100% 150%, #04b 24%, #06f 25%, #06f 28%, #04b 29%, #04b 36%, #06f 36%, #06f 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, #04b 24%, #06f 25%, #06f 28%, #04b 29%, #04b 36%, #06f 36%, #06f 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, #06f 10%, #04b 11%, #04b 23%, #06f 24%, #06f 30%, #04b 31%, #04b 43%, #06f 44%, #06f 50%, #04b 51%, #04b 63%, #06f 64%, #06f 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, #06f 5%, #04b 6%, #04b 15%, #06f 16%, #06f 20%, #04b 21%, #04b 30%, #06f 31%, #06f 35%, #04b 36%, #04b 45%, #06f 46%, #06f 49%, transparent 50%, transparent),
+  radial-gradient(circle at 0    50%, #06f 5%, #04b 6%, #04b 15%, #06f 16%, #06f 20%, #04b 21%, #04b 30%, #06f 31%, #06f 35%, #04b 36%, #04b 45%, #06f 46%, #06f 49%, transparent 50%, transparent);
+  background-size:200px 100px;
+}
+
+.voiceinator {
+  padding:2rem;
+  width:50rem;
+  margin:0 auto;
+  border-radius:1rem;
+  position: relative;
+  background:white;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow:0 0 5px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+  width:calc(100% + 4rem);
+  margin: -2rem 0 2rem -2rem;
+  padding:.5rem;
+  background: #fa0;
+  border-bottom: 5px solid #e80;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 100;
+  font-family: 'Berkshire Swash', cursive;
+  text-shadow:3px 3px 0 #e80;
+  user-select: none;
+}
+
+.voiceinator input,
+.voiceinator button,
+.voiceinator select,
+.voiceinator textarea {
+  width: 100%;
+  display: block;
+  margin:10px 0;
+  padding:10px;
+  border:0;
+  font-size: 2rem;
+  background:#F7F7F7;
+  outline:0;
+}
+
+textarea {
+  height: 20rem;
+  resize: none;
+}
+
+.voiceinator button {
+  background:#fa0;
+  border:0;
+  width: 49%;
+  float:left;
+  font-family: 'Berkshire Swash', cursive;
+  margin-bottom: 0;
+  font-size: 2rem;
+  border-bottom: 5px solid #e80;
+  cursor:pointer;
+  position: relative;
+  transition: all .2s;
+}
+
+.voiceinator button:nth-of-type(1) {
+  margin-right: 2%;
+}
+
+.voiceinator button:active {
+  top:2px;
+}
+
+.voiceinator button:nth-of-type(1):hover {
+  background: #f64;
+  border-bottom: 5px solid #f30;
+}
+
+.voiceinator button:nth-of-type(2):hover {
+  background: #8c5;
+  border-bottom: 5px solid #090;
+}
