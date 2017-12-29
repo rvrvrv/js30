@@ -19,9 +19,9 @@ body {
 .site-wrap {
   background: #fff;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
-  margin: 50px auto;
+  margin: 20px auto;
   max-width: 700px;
-  padding: 40px;
+  padding: 20px;
   text-align: justify;
   transform: scale(0.98);
   transition: transform .5s;
@@ -96,10 +96,10 @@ li.logo a {
 nav a {
   color: #fff;
   display: inline-block;
-  padding: 20px;
+  padding: .6em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all .2s;
+  transition: all .3s ease-in-out;
 }
 
 .align-left {
@@ -112,3 +112,9 @@ nav a {
   margin-left: 20px;
 }
 
+@media (max-width: 768px) {
+  nav a {
+    font-size: 3vw;
+    padding: .6em .2em;
+  }
+}
