@@ -2,8 +2,8 @@ const nav = document.getElementsByTagName('nav')[0];
 const topOfNav = nav.offsetTop;
 
 function fixNav() {
-  // When nav nearly reaches top of window, make it fixed
-  if (window.scrollY + 10 >= topOfNav) {
+  // When nav reaches top of window, make it fixed
+  if (window.scrollY >= topOfNav) {
     // Offset body to prevent janky reflow
     document.body.style.paddingTop = `${nav.offsetHeight}px`;
     // Add fixed class
