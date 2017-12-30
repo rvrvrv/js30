@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+div {
+  width: 100%;
+  padding: 10vmin;
+}
+
+.outer {
+  background: #b9887f;
+}
+
+.middle {
+  background: #eeccbc;
+}
+
+.inner {
+  background: #9e2723;
+}
+
+footer {
+  padding-top: 5vh;
+  text-align: center;
+}
