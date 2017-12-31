@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Follow-Along Nav</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h2>Follow-Along Nav</h2>
+
+  <nav class="top">
+    <div class="dropdown-bg">
+      <span class="arrow"></span>
+    </div>
+
+    <ul class="links">
+      <li>
+        <a href="#">About</a>
+        <div class="dropdown dropdown1">
+          <div class="about">
+            <img src="https://unsplash.it/50/50">
+            <p>This is an example of follow-along nav. It is based on a design by Stripe.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Courses</a>
+        <ul class="dropdown courses">
+          <li>
+            <a href="https://javascript30.com">JavaScript 30</a>
+          </li>
+          <li>
+            <a href="https://flexbox.io">What the Flexbox?!</a>
+          </li>
+          <li>
+            <a href="https://masteringmarkdown.com">Mastering Markdown</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Social</a>
+        <ul class="dropdown dropdown3">
+          <li><a class="button" href="https://twitter.com">Twitter</a></li>
+          <li><a class="button" href="https://facebook.com">Facebook</a></li>
+          <li><a class="button" href="#">Blog</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="expand">
+    <h3>Please expand your browser window, or visit this page on a larger device.</h3>
+    <h4>In production, the follow-along nav would be replaced by an alternate menu.</h4>
+  </div>
+</body>
+<script src="js/index.js"></script>
+</html>
