@@ -3,8 +3,7 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
-
-// Toggle whether or not the mouse should be down
+// Toggle isDown and slider 'active' class
 function toggleDown(makeDown) {
   if (makeDown) {
     isDown = true;
@@ -15,63 +14,40 @@ function toggleDown(makeDown) {
   }
 }
 
-// Slider mouse events
-slider.addEventListener('mousedown', (e) => {
+// Called from mousedown/touchstart events
+function startDrag(e, touch) {
   toggleDown(true);
-  // Determine starting position (X coordinate) of mouse
-  startX = e.pageX - slider.offsetLeft;
+  // Determine starting position (X coordinate) of touch or mouse
+  startX = touch
+    ? e.touches[0].pageX - slider.offsetLeft
+    : e.pageX - slider.offsetLeft;
   // Determine starting position (X coordinate) of slider
   scrollLeft = slider.scrollLeft;
-});
+}
 
-slider.addEventListener('mouseleave', () => {
-  toggleDown();
-});
-
-slider.addEventListener('mouseup', () => {
-  toggleDown();
-});
-
-slider.addEventListener('mousemove', (e) => {
-  // If mouse isn't down, don't do anything
+// Called from mousemove/touchmove events
+function drag(e, touch) {
+  // If mouse/touch isn't active on the slider, don't do anything
   if (!isDown) return;
   // Don't select text or trigger other events
   e.preventDefault();
-  // Track X coordinate of mouse
-  const x = e.pageX - slider.offsetLeft;
-  // Track how far the mouse has scrolled left or right
+  // Track X coordinate of touch or mouse
+  const x = touch
+    ? e.touches[0].pageX - slider.offsetLeft
+    : e.pageX - slider.offsetLeft;
+  // Track how far the user has scrolled left or right
   const walk = x - startX;
-  // Scroll left
+  // Scroll slider the correct amount
   slider.scrollLeft = scrollLeft - walk;
-});
+}
 
-// Slider touchevents
-slider.addEventListener('touchstart', (e) => {
-  toggleDown(true);
-  // Determine starting position (X coordinate) of touch
-  startX = e.touches[0].pageX - slider.offsetLeft;
-  // Determine starting position (X coordinate) of slider
-  scrollLeft = slider.scrollLeft;
-});
-
-slider.addEventListener('touchend', () => {
-  toggleDown();
-});
-
-slider.addEventListener('touchcancel', () => {
-  toggleDown();
-});
-
-slider.addEventListener('touchmove', (e) => {
-  // If mouse isn't down, don't do anything
-  if (!isDown) return;
-  // Don't select text or trigger other events
-  e.preventDefault();
-  // Track X coordinate of touch
-  const x = e.touches[0].pageX - slider.offsetLeft;
-  // Track how far the touch has scrolled left or right
-  const walk = x - startX;
-  // Scroll left
-  slider.scrollLeft = scrollLeft - walk;
-});
-
+// Mouse events
+slider.addEventListener('mousedown', e => startDrag(e));
+slider.addEventListener('mousemove', e => drag(e));
+slider.addEventListener('mouseleave', () => toggleDown());
+slider.addEventListener('mouseup', () => toggleDown());
+// Touch events (for mobile devices)
+slider.addEventListener('touchstart', e => startDrag(e, true));
+slider.addEventListener('touchmove', e => drag(e, true));
+slider.addEventListener('touchend', () => toggleDown());
+slider.addEventListener('touchcancel', () => toggleDown());
