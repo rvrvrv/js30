@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: #051 url('https://source.unsplash.com/Rfflri94rs8/') no-repeat fixed;
+  background-size: cover;
+  font: 24px sans-serif;
+  user-select: none;
+}
+
+.wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+video {
+  box-shadow:0 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.speed {
+  background:#1a3231;
+  margin: 10px;
+  flex: none;
+  width: 75px;
+  border-radius: 10px;
+  box-shadow:0 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.speed-bar {
+  width: 100%;
+  background: linear-gradient(-170deg, #f3e75c 0%, #4e4731 100%);
+  text-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  color: white;
+  height: 20%;
+  min-height: 8%;
+}
