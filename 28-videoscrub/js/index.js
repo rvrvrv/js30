@@ -4,8 +4,8 @@ const video = document.getElementsByTagName('video')[0];
 const [min, max] = [0.51, 3.01]; // Speed range of video player
 
 function handleMove(e) {
-  // Get Y coordinate of mouse
-  const y = e.pageY - speed.offsetTop;
+  // Get Y coordinate of mouse or touch
+  const y = (e.pageY ? e.pageY : e.touches[0].pageY) - speed.offsetTop;
   // Convert Y coordinate to percentage
   let percent = y / speed.offsetHeight;
   // Determine playback speed from percentage and min/max
@@ -23,3 +23,4 @@ function handleMove(e) {
 }
 
 speed.addEventListener('mousemove', handleMove);
+speed.addEventListener('touchmove', handleMove);
