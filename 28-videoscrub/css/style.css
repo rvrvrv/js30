@@ -1,17 +1,24 @@
 body, .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 body {
   position: relative;
   margin: 0;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 100vh;
   background: #051 url('https://source.unsplash.com/Rfflri94rs8/') no-repeat fixed;
   background-size: cover;
   font: 22px sans-serif;
   overflow: hidden;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .wrapper {
@@ -25,7 +32,9 @@ video {
 }
 
 .speed {
-  flex: none;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   height: 100%;
   width: 9%;
   background:#1a3231;
@@ -41,9 +50,15 @@ video {
   width: 100%;
   background: linear-gradient(-170deg, #f3e75c 0%, #4e4731 100%);
   text-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #fff;
 }
 
