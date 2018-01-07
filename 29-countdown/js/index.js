@@ -56,12 +56,6 @@ function timer(sec) {
   }, 1000);
 }
 
-function startTimer() {
-  // Get number of seconds from data-time attribute
-  const seconds = parseInt(this.dataset.time, 10);
-  timer(seconds);
-}
-
 // Handle customForm submissions
 document.customForm.addEventListener('submit', (e) => {
   // Don't refresh page
@@ -75,4 +69,8 @@ document.customForm.addEventListener('submit', (e) => {
   else document.customForm.minutes.value = '';
 });
 
-buttons.forEach(btn => btn.addEventListener('click', startTimer));
+// Handle button clicks
+buttons.forEach(btn => btn.addEventListener('click', (e) => {
+  // Start timer based on button's data-time attribute
+  timer(parseInt(e.target.dataset.time, 10));
+}));
