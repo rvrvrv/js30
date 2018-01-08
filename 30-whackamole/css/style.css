@@ -1,0 +1,117 @@
+html {
+  box-sizing: border-box;
+  background: #fff27d;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font: 42px 'Chewy', cursive;
+  overflow: hidden;
+}
+
+.top {
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 -.2em 0;
+  white-space: nowrap;
+}
+
+.score {
+  display: inline-block;
+  width: 1em;
+  background: rgba(255, 255, 255, 0.2);
+  margin-left: .2em;
+  border-radius: .2em;
+}
+
+button {
+  background: #000;
+  color: #fff27d;
+  border: 0 none;
+  border-radius: .2em;
+  font-size: .5em;
+  margin: -5vh auto 0 auto;
+  padding: .3em .6em;
+  cursor: pointer;
+  transition: all .2s linear;
+}
+
+button:disabled {
+  background: #333;
+  color: #cca;
+  cursor: default;
+}
+
+button:hover:not(:disabled) {
+  box-shadow: 0 3px 10px #000;
+  opacity: .9;
+}
+
+button:active {
+  box-shadow: 0 0 10px #000;
+}
+
+button:focus {
+  outline: none;
+}
+
+.game {
+  width: 100vw;
+  max-width: 1000px;
+  height: 82vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+  height: 35vh;
+  max-height: 300px;
+}
+
+.hole::after {
+  display: block;
+  background: url(../img/dirt.svg) bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height: 10vmax;
+  position: absolute;
+  bottom: -3.5vh;
+  z-index: 2;
+}
+
+.mole {
+  background: url(../img/mole.svg) bottom center no-repeat;
+  background-size: 20vh;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.hole.up .mole {
+  top: 0;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 12vw;
+  }
+  .hole {
+    flex: 1 0 50%;
+    height: 29vh;
+  }
+}
