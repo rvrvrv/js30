@@ -7,13 +7,13 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  outline: none !important;
   overflow-x: hidden;
   cursor: default !important;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  outline: none !important;
 }
 
 .main {
