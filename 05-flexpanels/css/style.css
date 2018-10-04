@@ -1,145 +1,115 @@
-    html {
-    	box-sizing: border-box;
-    	background: #ffc600;
-    	font-family: 'helvetica neue';
-    	font-size: 20px;
-    	font-weight: 200;
-    	cursor: default !important;
-    }
+html {
+  box-sizing: border-box;
+  background: #003;
+  cursor: default !important;
+}
 
-    body {
-    	margin: 0;
-    	overflow-x: hidden;
-    }
+body {
+  font: 40px "Amatic SC", cursive;
+  margin: 0;
+  min-width: 600px;
+}
 
-    *,
-    *:before,
-    *:after {
-    	box-sizing: inherit;
-    }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
-    .panels {
-    	min-height: 100vh;
-    	overflow: hidden;
-    	display: flex;
-    	display: -webkit-box;
-    	display: -ms-flexbox;
-    }
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
 
-    .panel {
-    	display: -webkit-box;
-    	display: -ms-flexbox;
-    	display: flex;
-    	-webkit-box-orient: vertical;
-    	-webkit-box-direction: normal;
-    	-ms-flex-direction: column;
-    	flex-direction: column;
-    	-webkit-box-flex: 1;
-    	-ms-flex: 1;
-    	flex: 1;
-    	-webkit-box-pack: center;
-    	-ms-flex-pack: center;
-    	justify-content: center;
-    	align-items: center;
-    	background: #6B0F9C;
-    	box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
-    	color: white;
-    	text-align: center;
-    	-webkit-box-align: center;
-    	-ms-flex-align: center;
-    	-ms-grid-row-align: center;
-    	align-items: center;
-    	/* Safari transitionend event.propertyName === flex */
-    	/* Chrome + FF transitionend event.propertyName === flex-grow */
-    	-webkit-transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.5s, -webkit-box-flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
-    	transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.5s, -webkit-box-flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
-    	transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.5s;
-    	transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.5s, -webkit-box-flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), -ms-flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
-    	font-size: 20px;
-    	background-size: cover;
-    	background-position: center;
-    }
+.panel {
+  min-width: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: #007 center/cover;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: center;
+  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.5s;
+}
 
-    .panel1 {
-    	background-image: url('https://rvrvrv.github.io/img/fp1-birds.jpg');
-    }
+.panel1 {
+  background-image: url("https://rvrvrv.github.io/img/fp1-birds.jpg");
+}
 
-    .panel2 {
-    	background-image: url('https://rvrvrv.github.io/img/fp2-moon.jpg');
-    }
+.panel2 {
+  background-image: url("https://rvrvrv.github.io/img/fp2-moon.jpg");
+}
 
-    .panel3 {
-    	background-image: url('https://rvrvrv.github.io/img/fp3-surf.jpg');
-    }
+.panel3 {
+  background-image: url("https://rvrvrv.github.io/img/fp3-surf.jpg");
+}
 
-    .panel4 {
-    	background-image: url('https://rvrvrv.github.io/img/fp4-hike.jpg');
-    }
+.panel4 {
+  background-image: url("https://rvrvrv.github.io/img/fp4-hike.jpg");
+}
 
-    .panel5 {
-    	background-image: url('https://rvrvrv.github.io/img/fp5-rabbits.jpg');
-    }
+.panel5 {
+  background-image: url("https://rvrvrv.github.io/img/fp5-rabbits.jpg");
+}
 
-    .panel>* {
-    	display: -webkit-box;
-    	display: -ms-flexbox;
-    	display: flex;
-    	-webkit-box-pack: center;
-    	-ms-flex-pack: center;
-    	justify-content: center;
-    	-webkit-box-align: center;
-    	-ms-flex-align: center;
-    	align-items: center;
-    	-webkit-box-flex: 1;
-    	-ms-flex: 1 0 auto;
-    	flex: 1 0 auto;
-    	margin: 0;
-    	width: 100%;
-    	-webkit-transition: -webkit-transform 0.5s;
-    	transition: -webkit-transform 0.5s;
-    	transition: transform 0.5s;
-    	transition: transform 0.5s, -webkit-transform 0.5s;
-    }
-    /*Hide inactive panel top text*/
+.panel > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  margin: 0;
+  width: 100%;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
 
-    .panel>*:first-child {
-    	-webkit-transform: translateY(-100%);
-    	transform: translateY(-100%);
-    }
-    /*Hide inactive panel bottom text*/
+/* Hide inactive panel top text */
+.panel > *:first-child {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
 
-    .panel>*:last-child {
-    	-webkit-transform: translateY(100%);
-    	transform: translateY(100%);
-    }
-    /*Show active panel top text*/
+/* Hide inactive panel bottom text */
+.panel > *:last-child {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
 
-    .panel.open-active>*:first-child,
-    .panel.open-active>*:last-child {
-    	-webkit-transform: translateY(0);
-    	transform: translateY(0);
-    }
+/* Show active panel top & bottom text */
+.panel.open-active > *:first-child,
+.panel.open-active > *:last-child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
 
-    .panel p {
-    	text-transform: uppercase;
-    	font-family: 'Amatic SC', cursive;
-    	text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-    	font-size: 2em;
-    }
+.panel p {
+  text-transform: uppercase;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+}
 
-    .panel p:nth-child(2) {
-    	font-size: 4em;
-    }
-    /*Expand active panel*/
+.panel p:nth-child(2) {
+  font-size: 1.8em;
+}
 
-    .panel.open {
-    	-webkit-box-flex: 5;
-    	-ms-flex: 5;
-    	flex: 5;
-    	font-size: 40px;
-    }
+/* Expand active panel */
+.panel.open {
+  flex: 3;
+  font-size: 1.5em;
+}
 
-    .cta {
-    	color: white;
-    	text-decoration: none;
-    }
+.cta {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 24px;
+  }
+}
