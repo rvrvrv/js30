@@ -1,12 +1,10 @@
-/*jshint browser: true, esversion: 6*/
-
-const canvas = document.querySelector('#draw');
-const erase = document.querySelector('#erase');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("draw");
+const erase = document.getElementById("erase");
+const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-ctx.lineJoin = 'round';
-ctx.lineCap = 'round';
+ctx.lineJoin = "round";
+ctx.lineCap = "round";
 ctx.lineWidth = 5;
 let isDrawing = false;
 let lastX = 0;
@@ -16,39 +14,39 @@ let dir = true;
 
 function draw(e) {
 	if (!isDrawing) return;
-	//Rainbow colors
-	(hue < 360) ? hue += 0.2: hue = 0;
-	//Varying line width
+	// Rainbow colors
+	hue = hue > 360 ? 0 : (hue += 0.3);
+	// Varying line width
 	if (ctx.lineWidth < 5 || ctx.lineWidth > 50) dir = !dir;
-	(dir) ? ctx.lineWidth += 0.2: ctx.lineWidth -= 0.2;
+	ctx.lineWidth = dir ? (ctx.lineWidth += 0.2) : (ctx.lineWidth -= 0.2);
 	ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 	ctx.beginPath();
-	//Starting coordinates
+	// Starting coordinates
 	ctx.moveTo(lastX, lastY);
-	//Ending coordinates
+	// Ending coordinates
 	ctx.lineTo(e.offsetX, e.offsetY);
-	//Draw line
+	// Draw line
 	ctx.stroke();
 	ctx.save();
-	//Reset coordinates
-  [lastX, lastY] = [e.offsetX, e.offsetY];
+	// Reset coordinates
+	[lastX, lastY] = [e.offsetX, e.offsetY];
 }
 
-//Handle drawing motions
-canvas.addEventListener('mousedown', (e) => {
+// Handle drawing motions
+canvas.addEventListener("mousedown", (e) => {
 	isDrawing = true;
-	//Set starting coordinates
-  [lastX, lastY] = [e.offsetX, e.offsetY];
+	// Set starting coordinates
+	[lastX, lastY] = [e.offsetX, e.offsetY];
 });
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseleave', () => isDrawing = false);
+canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("mouseup", () => (isDrawing = false));
+canvas.addEventListener("mouseleave", () => (isDrawing = false));
 
-//Erase button
+// Erase button
 erase.onclick = () => {
-	canvas.classList.add('lightSpeedOut');
+	canvas.classList.add("animated-exit");
 	setTimeout(() => {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		canvas.classList.remove('lightSpeedOut');
+		canvas.classList.remove("animated-exit");
 	}, 1000);
 };
