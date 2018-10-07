@@ -2,13 +2,13 @@
 const panels = document.querySelectorAll('.panel');
 
 // Toggle 'open' class
-	function toggleOpen() {
-		this.classList.toggle('open');
-	}
+function toggleOpen() {
+  this.classList.toggle('open');
+}
 
 // Toggle back to normal properties
 function toggleActive(e) {
-	if (e.propertyName.includes('flex')) this.classList.toggle('open-active');
+  if (e.propertyName.includes('flex')) this.classList.toggle('open-active');
 }
 
 // After click, toggle 'open' class
