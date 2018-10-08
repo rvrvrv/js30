@@ -1,82 +1,73 @@
 html {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-    -webkit-box-sizing: inherit;
+    overflow: hidden;
+  }
+  
+  *,
+  *:before,
+  *:after {
     box-sizing: inherit;
-}
-
-body {
-    padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
+  }
+  
+  body {
     display: flex;
-    background: #7A419B;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #115 0%, #328 48%, #205 100%);
-    background-size: cover;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-}
-
-.player {
+    background: #7a419b linear-gradient(135deg, #115 0%, #328 48%, #205 100%)
+      center/cover;
+    min-height: 100vh;
+    padding: 0;
+  }
+  
+  .player,
+  video {
+    max-height: 100vh;
+  }
+  
+  .player {
     max-width: 750px;
     border: 5px solid rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     position: relative;
     font-size: 0;
     overflow: hidden;
-}
-
-.player__button i {
+  }
+  
+  .player__button i {
     font-size: 1.2rem;
-}
-
-
-/* This css is only applied when fullscreen is active. */
-
-.player:-webkit-full-screen {
+  }
+  
+  /* When full-screen is active */
+  
+  .player:-webkit-full-screen {
     max-width: none;
     width: 100%;
-}
-
-.player:-moz-full-screen {
+  }
+  
+  .player:-moz-full-screen {
     max-width: none;
     width: 100%;
-}
-
-.player:-ms-fullscreen {
+  }
+  
+  .player:-ms-fullscreen {
     max-width: none;
     width: 100%;
-}
-
-.player:fullscreen {
+  }
+  
+  .player:fullscreen {
     max-width: none;
     width: 100%;
-}
-
-.player:-webkit-full-screen {
-    max-width: none;
+  }
+  
+  .player__video {
+    background-color: #000;
     width: 100%;
-}
-
-.player__video {
-    width: 100%;
-}
-
-.player__button {
+  }
+  
+  .player__button {
     background: none;
     border: 0;
-    font-size: .95rem;
+    font-size: 0.95rem;
     font-weight: 700;
     line-height: 1;
     color: white;
@@ -85,106 +76,88 @@ body {
     padding: 0;
     cursor: pointer;
     max-width: 50px;
-    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
-}
-
-.player__button:focus {
+  }
+  
+  .player__button:focus {
     border-color: #0a5;
-}
-
-.player__button:hover {
+  }
+  
+  .player__button:hover {
     color: #0a5;
-    background: rgba(0, 0, 0, .8);
-}
-
-.player__slider {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .player__slider {
     width: 10px;
     height: 30px;
-}
-
-.player__controls {
-    display: -webkit-box;
-    display: -ms-flexbox;
+  }
+  
+  .player__controls {
     display: flex;
     position: absolute;
     bottom: 0;
     width: 100%;
     -webkit-transform: translateY(100%) translateY(-5px);
-    transform: translateY(100%) translateY(-5px);
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    -ms-flex-wrap: wrap;
+            transform: translateY(100%) translateY(-5px);
+    transition: all 0.3s;
     flex-wrap: wrap;
     background: rgba(0, 0, 0, 0.1);
-}
-
-.player:hover .player__controls {
+  }
+  
+  .player:hover .player__controls {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
-}
-
-.player:hover .progress {
+            transform: translateY(0);
+  }
+  
+  .player:hover .progress {
     height: 15px;
-}
-
-.player__controls>* {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
+  }
+  
+  .player__controls > * {
     flex: 1;
-}
-
-.progress {
-    -webkit-box-flex: 10;
-    -ms-flex: 10;
+  }
+  
+  .progress {
     flex: 10;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     height: 5px;
-    -webkit-transition: height 0.3s;
     transition: height 0.3s;
     background: rgba(0, 0, 0, 0.5);
     cursor: ew-resize;
-}
-
-.progress__filled {
+  }
+  
+  .progress__filled {
     width: 50%;
     background: #0a5;
-    -webkit-box-flex: 0;
-    -ms-flex: 0;
     flex: 0;
-    -ms-flex-preferred-size: 50%;
     flex-basis: 0%;
-}
-
-input[type=range] {
+  }
+  
+  input[type="range"] {
     -webkit-appearance: none;
     background: transparent;
     width: 100%;
     margin: 0 5px;
-}
-
-input[type=range]:focus {
+  }
+  
+  input[type="range"]:focus {
     outline: none;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
+  }
+  
+  input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     height: 8.4px;
     cursor: pointer;
-    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1.3px;
     border: 0.2px solid rgba(1, 1, 1, 0);
-}
-
-input[type=range]::-webkit-slider-thumb {
-    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
     height: 15px;
     width: 15px;
@@ -193,15 +166,14 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -3.5px;
-    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-}
-
-input[type=range]:focus::-wefbkit-slider-runnable-track {
+  }
+  
+  input[type="range"]:focus::-wefbkit-slider-runnable-track {
     background: #bada55;
-}
-
-input[type=range]::-moz-range-track {
+  }
+  
+  input[type="range"]::-moz-range-track {
     width: 100%;
     height: 8.4px;
     cursor: pointer;
@@ -209,13 +181,14 @@ input[type=range]::-moz-range-track {
     background: #ffffff;
     border-radius: 1.3px;
     border: 0.2px solid rgba(1, 1, 1, 0);
-}
-
-input[type=range]::-moz-range-thumb {
+  }
+  
+  input[type="range"]::-moz-range-thumb {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
     height: 15px;
     width: 15px;
     border-radius: 50px;
     background: #0a5;
     cursor: pointer;
-}
+  }
+  
