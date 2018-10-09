@@ -1,21 +1,18 @@
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: #a3caa5;
-  font-family: Helvetica;
-  font-size: 20px;
-  font-weight: 200;
+  font: 20px "Helvetica", sans-serif;
 }
 
 body {
   margin: 0;
 }
-
 
 h1 {
   margin-top: 0;
@@ -23,8 +20,8 @@ h1 {
 
 .site-wrap {
   max-width: 700px;
-  margin: 100px auto;
-  background: white;
+  margin: 50px auto;
+  background: #fff;
   padding: 40px;
   text-align: justify;
 }
@@ -41,21 +38,20 @@ h1 {
 
 .slide-in {
   opacity: 0;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .align-left.slide-in {
   -webkit-transform: rotateY(45deg) translateX(-30%) scale(0.9);
-  transform: rotateY(45deg) translateX(-30%) scale(0.9);
+          transform: rotateY(45deg) translateX(-30%) scale(0.9);
 }
 .align-right.slide-in {
   -webkit-transform: rotateY(-45deg) translateX(30%) scale(0.9);
-  transform: rotateY(-45deg) translateX(30%) scale(0.9);
+          transform: rotateY(-45deg) translateX(30%) scale(0.9);
 }
 
 .slide-in.active {
   opacity: 1;
   -webkit-transform: rotateY(0) translateX(0%) scale(1);
-  transform: rotateY(0) translateX(0%) scale(1);
+          transform: rotateY(0) translateX(0%) scale(1);
 }
