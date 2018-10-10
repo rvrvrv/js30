@@ -39,11 +39,10 @@ function addItem(e) {
 
 // Change item's done (checked) status
 function toggleDone(e) {
-  if (!e.target.matches('input')) {
-    return;
-  } // Ignore non-checkbox clicks
+  // Ignore non-checkbox clicks
+  if (!e.target.matches('input')) return;
   // Get index of clicked item
-  const index = e.target.dataset.index;
+  const { index } = e.target.dataset;
   // Toggle done property of clicked item
   items[index].done = !items[index].done;
   // Update localStorage and list
@@ -53,7 +52,7 @@ function toggleDone(e) {
 
 // Clear, check, or uncheck all items
 function affectAll(e) {
-  const task = e.target.dataset.task;
+  const { task } = e.target.dataset;
   // Clear all items
   if (task === 'clear') {
     if (confirm('Are you sure you want to clear all of the items?')) {
@@ -64,13 +63,7 @@ function affectAll(e) {
   }
   // Check or uncheck all items
   if (task.includes('check')) {
-    items.forEach(item => {
-      if (task === 'check') {
-        item.done = true;
-      } else {
-        item.done = false;
-      }
-    });
+    items.forEach(item => item.done = (task === 'check'));
     localStorage.setItem('items', JSON.stringify(items));
     populateList(items, itemsList);
   }
