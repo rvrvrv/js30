@@ -1,47 +1,41 @@
 html {
   box-sizing: border-box;
-  background: #000 url('https://rvrvrv.github.io/img/tapas.jpg') center/cover
-    no-repeat fixed;
+  background: #000
+    url('https://rvrvrv.github.io/img/tapas.jpg')
+    center/cover
+    no-repeat
+    fixed;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   box-sizing: inherit;
 }
 
 img {
   background: rgba(0, 0, 0, 0.2);
-  padding: 20px;
   border-radius: 50%;
-  width: 200px;
   margin-bottom: 50px;
+  padding: 20px;
+  width: 200px;
 }
 
 .wrapper {
-  padding: 20px;
-  max-width: 350px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 350px;
 }
 
 h2 {
+  margin: 0;
   text-align: center;
   text-transform: uppercase;
-  margin: 0;
-  font-weight: 200;
 }
 
 .plates {
@@ -52,17 +46,12 @@ h2 {
 }
 
 .plates li {
+  display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 10px 0;
-  font-weight: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .plates label {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
   flex: 1;
   cursor: pointer;
 }
@@ -88,16 +77,15 @@ h2 {
   margin: 20px 0;
 }
 
-.add-items input,
-.bottom-btns button {
+.add-items input, .bottom-btns button {
   padding: 10px;
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 button {
+  cursor: pointer;
   margin: 5px;
-  -webkit-transition: all .2s;
   transition: all .2s;
 }
 
@@ -107,4 +95,10 @@ button:hover {
 
 button:active {
   box-shadow: 0 0 8px #000;
+}
+
+@media (max-height: 550px) {
+  img {
+    display: none;
+  }
 }
