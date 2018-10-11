@@ -13,30 +13,42 @@
   <div class="photobooth">
     <h1>Photo Booth</h1>
     <div class="controls">
-         <table align="center">
-           <th colspan="4">Green Screen Threshold Values</th>
-           <tr>
-             <td><label for="rmin">R Min:</label></td>
-             <td><input type="range" min=0 max=255 name="rmin"></td>
-             <td><label for="rmax">R Max:</label></td>
-             <td><input type="range" min=0 max=255 name="rmax"></td>
-             <td><button class="fx-btn fx-red" onClick="chooseEffect('red')">Red Effect</button></td>
-          </tr>
-          <tr>
-              <td><label for="gmin">G Min:</label></td>
-              <td><input type="range" min=0 max=255 value=0 name="gmin"></td>
-              <td><label for="gmax">G Max:</label></td>
-              <td><input type="range" min=0 max=255 value=255 name="gmax"></td>
-              <td><button class="fx-btn fx-green" onClick="chooseEffect('green')">Green Screen</button></td>
-           </tr>
-           <tr>
-              <td><label for="bmin">B Min:</label></td>
-              <td><input type="range" min=0 max=255 name="bmin"></td>
-              <td><label for="bmax">B Max:</label></td>
-              <td><input type="range" min=0 max=255 name="bmax"></td>
-              <td><button class="fx-btn fx-rgb" onClick="chooseEffect('rgb')">RGB Split</button></td>
-           </tr>
-        </table>
+      <div class="row">
+        <span class="title">Green Screen Threshold Values</span>
+      </div>
+      <div class="row">
+        <span>
+          <label for="rmin">R Min:</label>
+          <input type="range" min=0 max=255 name="rmin">
+        </span>
+        <span>
+          <label for="rmax">R Max:</label>
+          <input type="range" min=0 max=255 name="rmax">
+        </span>
+          <button class="fx-btn fx-red" onClick="chooseEffect('red')">Red Effect</button>
+      </div>
+      <div class="row">
+        <span>
+          <label for="gmin">G Min:</label>
+          <input type="range" min=0 max=255 value=0 name="gmin">
+        </span>
+        <span>
+          <label for="gmax">G Max:</label>
+          <input type="range" min=0 max=255 value=255 name="gmax">
+        </span>
+        <button class="fx-btn fx-green" onClick="chooseEffect('green')">Green Screen</button>
+      </div>
+      <div class="row">
+        <span>
+          <label for="bmin">B Min:</label>
+          <input type="range" min=0 max=255 name="bmin">
+        </span>
+        <span>
+          <label for="bmax">B Max:</label>
+          <input type="range" min=0 max=255 name="bmax">
+        </span>
+        <button class="fx-btn fx-rgb" onClick="chooseEffect('rgb')">RGB Split</button>
+      </div>
     </div>
     <canvas class="video-canvas"></canvas>
     <div class="take-photo">
@@ -44,7 +56,7 @@
     </div>
     <div class="photo-roll"></div>
   </div>
-  <audio id="shutterSound" src="https://freesound.org/data/previews/242/242429_3509815-hq.mp3" hidden></audio>
+  <audio id="shutterSound" src="https://freesound.org/data/previews/242/242429_3509815-hq.mp3" hidden></audio>  
 </body>
 <script src="js/index.js"></script>
 </html>
