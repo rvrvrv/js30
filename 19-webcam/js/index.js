@@ -3,8 +3,7 @@ const canvas = document.querySelector('.video-canvas');
 const ctx = canvas.getContext('2d');
 const strip = document.querySelector('.photo-roll');
 const snap = document.getElementById('shutterSound');
-let vidWidth, vidHeight, vidEffect;
-
+let vidEffect;
 
 // Make all pixels more red
 function redEffect(pixels) {
@@ -32,7 +31,7 @@ function rgbSplit(pixels) {
 function greenScreen(pixels) {
   const levels = {};
   // Get value from each slider
-  document.querySelectorAll('.rgb input').forEach((input) => {
+  document.querySelectorAll('.controls input').forEach((input) => {
     levels[input.name] = input.value; // Store in levels object
   });
   // Iterate over every pixel (stored as rgba in pixels array)
@@ -42,12 +41,14 @@ function greenScreen(pixels) {
     const g = pixels.data[i + 1];
     const b = pixels.data[i + 2];
     // If the pixel's rgb values are within every slider range, make it transparent
-    if (r >= levels.rmin
+    if (
+      r >= levels.rmin
       && g >= levels.gmin
       && b >= levels.bmin
       && r <= levels.rmax
       && g <= levels.gmax
-      && b <= levels.bmax) {
+      && b <= levels.bmax
+    ) {
       pixels.data[i + 3] = 0;
     }
   }
@@ -56,10 +57,13 @@ function greenScreen(pixels) {
 
 // Paint video stream on canvas
 function paintToCanvas() {
+  const { videoWidth, videoHeight } = video;
+  canvas.width = videoWidth;
+  canvas.height = videoHeight;
   // Paint on canvas every 16 ms
   const painting = setInterval(() => {
-    ctx.drawImage(video, 0, 0, vidWidth, vidHeight);
-    let pixels = ctx.getImageData(0, 0, vidWidth, vidHeight);
+    ctx.drawImage(video, 0, 0, videoWidth, videoHeight);
+    let pixels = ctx.getImageData(0, 0, videoWidth, videoHeight);
     if (vidEffect === 'red') pixels = redEffect(pixels);
     else if (vidEffect === 'rgb') pixels = rgbSplit(pixels);
     else if (vidEffect === 'green') pixels = greenScreen(pixels);
@@ -72,33 +76,31 @@ function chooseEffect(effect) {
   // If user selects active effect, disable it
   if (effect === vidEffect) {
     vidEffect = null;
-    document.getElementsByClassName(`fx-${effect}`)[0].classList.remove('fx-on');
+    return document
+      .getElementsByClassName(`fx-${effect}`)[0]
+      .classList.remove('fx-on');
   }
   // Otherwise, activate the chosen effect
-  else {
-    vidEffect = effect;
-    // Update UI
-    for (let i = 0; i < 3; i++) {
-      document.getElementsByClassName('fx-btn')[i].classList.remove('fx-on');
-    }
-    document.getElementsByClassName(`fx-${effect}`)[0].classList.add('fx-on');
+  vidEffect = effect;
+  // Update UI
+  for (let i = 0; i < 3; i++) {
+    document.getElementsByClassName('fx-btn')[i].classList.remove('fx-on');
   }
+  document.getElementsByClassName(`fx-${effect}`)[0].classList.add('fx-on');
 }
 
 // Retrieve video feed and eventually send to canvas
 function getVideo() {
   // Ask for webcam permission
-  navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+  navigator
+    .mediaDevices
+    .getUserMedia({ video: true, audio: false })
     .then((localMediaStream) => {
       // Send stream to video player
-      video.src = window.URL.createObjectURL(localMediaStream);
+      video.srcObject = localMediaStream;
       video.play();
       // When fully loaded, store dimensions and send to canvas
-      video.onloadedmetadata = () => {
-        vidWidth = video.videoWidth;
-        vidHeight = video.videoHeight;
-        paintToCanvas();
-      };
+      video.onloadedmetadata = () => paintToCanvas();
     })
     .catch((err) => {
       console.error(err);
@@ -111,7 +113,6 @@ function takePhoto() {
   // Play shutter sound
   snap.currentTime = 0;
   snap.play();
-
   // Get visual data from canvas
   const data = canvas.toDataURL('image/jpeg');
   // Create snapshot download link
@@ -125,13 +126,5 @@ function takePhoto() {
   strip.insertBefore(link, strip.firstChild);
 }
 
-// Check browser type
-function checkBrowser() {
-  // If mobile device, don't capture video
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
-    document.body.innerHTML = 'Please visit the Photo Booth on a desktop or laptop device.';
-  } else getVideo(); // Otherwise, continue with video capture
-}
-
-// Upon page startup, check browser type
-document.addEventListener('DOMContentLoaded', checkBrowser);
+// Load video upon page startup
+document.addEventListener('DOMContentLoaded', getVideo);
