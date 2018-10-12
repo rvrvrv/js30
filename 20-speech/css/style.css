@@ -4,10 +4,9 @@ html {
 
 body {
   background-color: hsl(60, 100%, 8%);
-  font: 200 20px Tahoma;
-  -webkit-transition: background-color .5s;
-  transition: background-color .5s;
+  font: 20px "Tahoma", sans-serif;
   height: 100%;
+  transition: background-color 0.5s;
 }
 
 .top {
@@ -17,25 +16,20 @@ body {
 
 button {
   box-shadow: inset 0px 1px 0px 0px #a6827e;
-  background: -webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
-  background-color: #7d5d3b;
-  border-radius: 3px;
+  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%) #7d5d3b;
   border: 1px solid #54381e;
+  border-radius: 3px;
   cursor: pointer;
-  color: #ffffff;
+  color: #fff;
   padding: 6px 24px;
-  text-shadow: 0px 1px 0px #4d3534;
+  text-shadow: 0 1px 0 #4d3534;
   text-align: center;
   font-size: 2rem;
-  -webkit-transition: box-shadow .2s;
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
 }
 
 button:hover {
-  background: -webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
-  background-color: #634b30;
+  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%) #634b30;
   box-shadow: 0 0 3px #fff;
 }
 
@@ -47,13 +41,20 @@ button:active {
   max-width: 500px;
   margin: 50px auto;
   position: relative;
-  background: white;
+  background-color: #fff;
+  background: -webkit-gradient(
+      linear,
+      0 0,
+      0 100%,
+      from(#d9eaf3),
+      color-stop(4%, #fff)
+    )
+    0 4px;
+  background-size: 100% 3rem;
   border-radius: 5px;
   box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem 1rem 5rem;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
-  background-size: 100% 3rem;
-  font-family: 'helvetica neue';
+  font-family: "Helvetica Neue", sans-serif;
   line-height: 3rem;
 }
 
@@ -62,7 +63,7 @@ p {
 }
 
 .notebook:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
   top: 0;
