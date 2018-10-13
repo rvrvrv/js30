@@ -15,4 +15,3 @@ navigator.geolocation.watchPosition((d) => {
   document.body.innerHTML = '<h3>An error has occurred.</h3>';
   if (err.message) document.body.innerHTML += `<h3 style="color:#faa;">${err.message}</h3>`;
 });
-
