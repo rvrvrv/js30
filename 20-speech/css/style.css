@@ -21,10 +21,11 @@ button {
   border-radius: 3px;
   cursor: pointer;
   color: #fff;
-  padding: 6px 24px;
+  font-size: 2rem;
   text-shadow: 0 1px 0 #4d3534;
   text-align: center;
-  font-size: 2rem;
+  padding: 6px 24px;
+  width: 9em;
   transition: box-shadow 0.2s;
 }
 
@@ -62,6 +63,10 @@ p {
   margin: 0 0 3rem;
 }
 
+.notebook p::first-letter {
+  text-transform: uppercase;
+}
+
 .notebook:before {
   content: "";
   position: absolute;
@@ -74,8 +79,8 @@ p {
 }
 
 .magic {
-  -webkit-animation: color-change 1s linear 2 both;
-          animation: color-change 1s linear 2 both;
+  -webkit-animation: color-change 1s linear 3 both;
+          animation: color-change 1s linear 3 both;
 }
 
 @-webkit-keyframes color-change {
