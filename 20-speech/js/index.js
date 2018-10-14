@@ -6,8 +6,7 @@ const btn = document.getElementsByTagName('button')[0];
 let p = document.createElement('p');
 notebook.appendChild(p);
 // Initialize recognition with maximum browser compatibility
-window.SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
 // Change the background to a random color
@@ -44,9 +43,11 @@ function captureSpeech() {
     }
 
     // Secret word to flash the background
-    if (transcript.includes('Magic')) {
-      document.body.classList.add('magic'); // 'magic' class triggers animation
-      setTimeout(() => document.body.classList.remove('magic'), 2000); // Remove class after animation completes
+    if (transcript.match(/magic/i)) {
+      // 'magic' class triggers animation
+      document.body.classList.add('magic');
+      // Remove class after animation completes
+      setTimeout(() => document.body.classList.remove('magic'), 3000);
     }
   });
 
