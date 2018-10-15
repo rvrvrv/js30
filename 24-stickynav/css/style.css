@@ -1,7 +1,7 @@
 html {
   background: #eee;
   box-sizing: border-box;
-  font-family: 'helvetica neue';
+  font-family: "Helvetica Neue", sans-serif;
   font-size: 20px;
   font-weight: 200;
 }
@@ -23,17 +23,21 @@ body {
   max-width: 700px;
   padding: 20px;
   text-align: justify;
-  transform: scale(0.98);
-  transition: transform .5s;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .fixed-nav .site-wrap {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 header {
   align-items: center;
-  background: url(https://unsplash.it/1080/1080) bottom center no-repeat;
+  background: url(https://picsum.photos/1080?random) bottom center no-repeat;
   background-size: cover;
   display: flex;
   height: 30vh;
@@ -53,12 +57,12 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .fixed-nav nav {
   position: fixed;
-  box-shadow: 0 5px 5px rgba(0,0,100,0.3);
+  box-shadow: 0 5px 5px rgba(0, 0, 100, 0.3);
 }
 
 nav ul {
@@ -82,7 +86,7 @@ li.logo {
   font-weight: 600;
   max-width: 0;
   overflow: hidden;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .fixed-nav li.logo {
@@ -96,10 +100,10 @@ li.logo a {
 nav a {
   color: #fff;
   display: inline-block;
-  padding: .6em;
+  padding: 0.6em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .align-left {
@@ -115,6 +119,6 @@ nav a {
 @media (max-width: 768px) {
   nav a {
     font-size: 3vw;
-    padding: .6em .2em;
+    padding: 0.6em 0.2em;
   }
 }
