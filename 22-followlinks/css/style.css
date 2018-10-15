@@ -3,7 +3,9 @@ html {
   overflow-x: hidden;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -13,13 +15,30 @@ body {
   min-height: 100vh;
   margin: 0 auto;
   background-color: #fdd;
-  background: linear-gradient(45deg, hsla(340, 100%, 80%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
-  linear-gradient(135deg, hsla(225, 95%, 70%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
-  linear-gradient(225deg, hsla(140, 90%, 70%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
-  linear-gradient(315deg, hsla(35, 95%, 70%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+  background: linear-gradient(
+      45deg,
+      hsla(340, 100%, 80%, 1) 0%,
+      hsla(340, 100%, 55%, 0) 70%
+    ),
+    linear-gradient(
+      135deg,
+      hsla(225, 95%, 70%, 1) 10%,
+      hsla(225, 95%, 50%, 0) 80%
+    ),
+    linear-gradient(
+      225deg,
+      hsla(140, 90%, 70%, 1) 10%,
+      hsla(140, 90%, 50%, 0) 80%
+    ),
+    linear-gradient(
+      315deg,
+      hsla(35, 95%, 70%, 1) 100%,
+      hsla(35, 95%, 55%, 0) 70%
+    );
 }
 
-.wrapper, .menu {
+.wrapper,
+.menu {
   width: 95vw;
 }
 
@@ -36,11 +55,11 @@ a {
   color: black;
   cursor: pointer;
   border-radius: 7px;
-  transition: background .5s;
+  transition: background 0.5s;
 }
 
 a:not(:hover) {
-  background: rgba(0,0,0,.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .highlight {
@@ -49,11 +68,13 @@ a:not(:hover) {
   top: 0;
   left: 0;
   display: block;
-  transition: transform .25s ease-out, height .3s, width .3s, opacity .01s;
+  transition: height 0.3s, width 0.3s, opacity 0.01s, -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, height 0.3s, width 0.3s, opacity 0.01s;
+  transition: transform 0.25s ease-out, height 0.3s, width 0.3s, opacity 0.01s, -webkit-transform 0.25s ease-out;
   border-bottom: 2px solid white;
   border-radius: 20px;
   background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .menu {
@@ -66,7 +87,7 @@ a:not(:hover) {
 
 .menu a {
   display: inline-block;
-  margin: 0 .5em;
-  padding: .3em;
+  margin: 0 0.5em;
+  padding: 0.3em;
   color: black;
 }
