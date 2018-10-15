@@ -22,6 +22,13 @@ function populateVoices() {
   voiceSelect.innerHTML = voices
     .map(v => `<option value="${v.name}">${v.name} (${v.lang})</option>`)
     .join('');
+  // Set default value to English, if possible
+  for (let i = 0; i < voiceSelect.options.length; i++) {
+    if (voiceSelect.options[i].value === 'Google US English') {
+      voiceSelect.value = 'Google US English';
+      return;
+    }
+  }
 }
 
 // Stop speech, and optionally restart after brief delay
@@ -33,7 +40,7 @@ function toggleSpeech(restart = true) {
 // Update the user's voice selection
 function setVoice() {
   // Set spokenMsg voice to dropdown value
-  spokenMsg.voice = voices.find(v => (v.name === this.value));
+  spokenMsg.voice = voices.find(v => v.name === this.value);
   toggleSpeech();
 }
 
