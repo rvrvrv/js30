@@ -3,49 +3,137 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  display:flex;
-  min-height: 100vh;
+  display: flex;
   align-items: center;
-  background-color:#04b;
-  background-image: repeating-linear-gradient(315deg, transparent, transparent 50px, rgba(255,255,255,.2) 50px, rgba(255,255,255,.2) 100px);
+  min-height: 100vh;
+  background-color: #04b;
+  background-image: radial-gradient(
+      circle at 100% 150%,
+      #04b 24%,
+      #06f 25%,
+      #06f 28%,
+      #04b 29%,
+      #04b 36%,
+      #06f 36%,
+      #06f 40%,
+      transparent 40%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 0 150%,
+      #04b 24%,
+      #06f 25%,
+      #06f 28%,
+      #04b 29%,
+      #04b 36%,
+      #06f 36%,
+      #06f 40%,
+      transparent 40%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      #06f 10%,
+      #04b 11%,
+      #04b 23%,
+      #06f 24%,
+      #06f 30%,
+      #04b 31%,
+      #04b 43%,
+      #06f 44%,
+      #06f 50%,
+      #04b 51%,
+      #04b 63%,
+      #06f 64%,
+      #06f 71%,
+      transparent 71%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      #06f 5%,
+      #04b 6%,
+      #04b 15%,
+      #06f 16%,
+      #06f 20%,
+      #04b 21%,
+      #04b 30%,
+      #06f 31%,
+      #06f 35%,
+      #04b 36%,
+      #04b 45%,
+      #06f 46%,
+      #06f 49%,
+      transparent 50%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 0 50%,
+      #06f 5%,
+      #04b 6%,
+      #04b 15%,
+      #06f 16%,
+      #06f 20%,
+      #04b 21%,
+      #04b 30%,
+      #06f 31%,
+      #06f 35%,
+      #04b 36%,
+      #04b 45%,
+      #06f 46%,
+      #06f 49%,
+      transparent 50%,
+      transparent
+    );
+  background-size: 200px 100px;
 }
 
 .voiceinator {
-  padding: 2rem;
-  width: 50rem;
-  margin: 0 auto;
-  border-radius: 1rem;
-  position: relative;
   background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  width: 50rem;
   overflow: hidden;
   z-index: 1;
-  box-shadow:0 0 5px 5px rgba(0,0,0,0.1);
 }
 
 h1 {
   width: calc(100% + 4rem);
   margin: -2rem 0 2rem -2rem;
-  padding: .5rem;
+  padding: 0.5rem;
   background: #fa0;
   border-bottom: 5px solid #e80;
   text-align: center;
-  font-size: 5rem;
-  font-weight: 100;
-  font-family: 'Berkshire Swash', cursive;
+  font: 5rem "Berkshire Swash", cursive;
   text-shadow: 3px 3px 0 #e80;
   user-select: none;
 }
 
-label {
-  font-size: 1.5rem;
+.voiceinator input,
+.voiceinator button,
+.voiceinator select,
+.voiceinator textarea {
+  display: block;
+  background: #f7f7f7;
+  border: 0;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 2rem;
+  outline: 0;
+  width: 100%;
 }
 
 textarea {
@@ -53,36 +141,18 @@ textarea {
   resize: none;
 }
 
-.voiceinator input,
-.voiceinator button,
-.voiceinator select,
-.voiceinator textarea {
-  width: 100%;
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  border: 0;
-  font-size: 2rem;
-  background: #F7F7F7;
-  outline: 0;
-}
-
-.voiceinator input {
-  margin-top: -1rem;
-}
-
 .voiceinator button {
   background: #fa0;
   border: 0;
   width: 49%;
   float: left;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: "Berkshire Swash", cursive;
   margin-bottom: 0;
   font-size: 2rem;
   border-bottom: 5px solid #e80;
   cursor: pointer;
   position: relative;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .voiceinator button:nth-of-type(1) {
@@ -98,7 +168,7 @@ textarea {
   border-bottom: 5px solid #f30;
 }
 
-.voiceinator button:nth-of-type(2):not(.no-hover):hover {
+.voiceinator button:nth-of-type(2):hover {
   background: #8c5;
   border-bottom: 5px solid #090;
 }
