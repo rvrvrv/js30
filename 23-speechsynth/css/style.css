@@ -122,6 +122,14 @@ h1 {
   user-select: none;
 }
 
+input[type="range"] {
+  cursor: grab;
+}
+
+input[type="range"]:active {
+  cursor: grabbing;
+}
+
 .voiceinator input,
 .voiceinator button,
 .voiceinator select,
