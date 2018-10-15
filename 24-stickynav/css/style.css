@@ -37,7 +37,7 @@ body {
 
 header {
   align-items: center;
-  background: url(https://picsum.photos/1080?random) bottom center no-repeat;
+  background: url(https://picsum.photos/1080?random&blur) bottom center no-repeat;
   background-size: cover;
   display: flex;
   height: 30vh;
