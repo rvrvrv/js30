@@ -14,7 +14,7 @@ function highlightLink() {
   Object.assign(highlight.style, {
     width: `${linkCoords.width + 6}px`,
     height: `${linkCoords.height + 6}px`,
-    transform: `translate(${linkCoords.left - 3}px, ${(linkCoords.top + window.scrollY) - 3}px)`,
+    transform: `translate(${linkCoords.left - 3}px, ${linkCoords.top + window.scrollY - 3}px)`,
     opacity: 1
   });
 }
