@@ -7,12 +7,12 @@ function handleEnter() {
   this.classList.add('trigger-enter');
   // If trigger-enter class still exists, add trigger-enter-active
   setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
+  bg.classList.add('open');
   // Display dropdown background with correct size
   const dropdown = this.getElementsByClassName('dropdown')[0];
   // Get coordinates of dropdown and nav
   const dropdownCoords = dropdown.getBoundingClientRect();
   const navCoords = nav.getBoundingClientRect();
-  bg.classList.add('open');
   // Assign correct style to dropdown background
   Object.assign(bg.style, {
     height: `${dropdownCoords.height}px`,
@@ -23,8 +23,7 @@ function handleEnter() {
 
 function handleLeave() {
   // Remove trigger-enter classes to hide dropdown
-  this.classList.remove('trigger-enter-active');
-  setTimeout(() => this.classList.remove('trigger-enter'), 50);
+  this.classList.remove('trigger-enter-active', 'trigger-enter');
   // Hide dropdown background
   bg.classList.remove('open');
 }
