@@ -9,7 +9,7 @@ function handleMove(e) {
   // Convert Y coordinate to percentage
   let percent = y / speed.offsetHeight;
   // Determine playback speed from percentage and min/max
-  let playback = ((percent * (max - min)) + min);
+  let playback = (percent * (max - min)) + min;
   // If playback is close to 100%, snap to 100%
   if (playback > 0.95 && playback < 1.05) {
     playback = 1;
