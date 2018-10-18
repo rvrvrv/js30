@@ -1,4 +1,5 @@
 let counter;
+const customTime = document.customForm.minutes;
 const timeLeftDisplay = document.getElementsByClassName('display__time-left')[0];
 const endTimeDisplay = document.getElementsByClassName('display__end-time')[0];
 const buttons = document.querySelectorAll('button');
@@ -22,6 +23,7 @@ function stopTimer() {
   clearInterval(counter);
   // Update UI
   timeLeftDisplay.textContent = 'Done!';
+  document.title = 'Done!';
 }
 
 function displayTimeLeft(sec) {
@@ -61,12 +63,13 @@ document.customForm.addEventListener('submit', (e) => {
   // Don't refresh page
   e.preventDefault();
   // Store user input
-  const minutes = parseInt(document.customForm.minutes.value.trim(), 10);
-  // Validate input, convert minutes to seconds, and start timer
-  if (!isNaN(minutes) && minutes > 0) timer(minutes * 60);
-  else if (minutes === 0) stopTimer();
-  // If invalid input, clear the form
-  else document.customForm.minutes.value = '';
+  const minutes = parseInt(customTime.value.trim(), 10);
+  // If invalid, clear input
+  if (Number.isNaN(minutes)) customTime.value = '';
+  // If valid (including 0 min.), convert minutes to seconds and start timer
+  else timer(minutes * 60);
+  // Remove focus from input
+  customTime.blur();
 });
 
 // Handle button clicks
