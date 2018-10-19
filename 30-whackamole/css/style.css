@@ -1,16 +1,23 @@
 html {
   box-sizing: border-box;
   background: #fff27d;
+  transition: background .5s linear;
 }
 
-*, *:before, *:after {
+html.active-game {
+  background: #dcffd5;
+}
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
   padding: 0;
   margin: 0;
-  font: 42px 'Chewy', cursive;
+  font: 36px "Chewy", cursive;
   overflow: hidden;
 }
 
@@ -19,28 +26,28 @@ body {
 }
 
 h1 {
-  margin: 0 0 -.2em 0;
+  margin: 0 0 0 1em;
   white-space: nowrap;
 }
 
 .score {
   display: inline-block;
-  width: 1em;
+  width: 1.4em;
   background: rgba(255, 255, 255, 0.2);
-  margin-left: .2em;
-  border-radius: .2em;
+  margin-left: 0.2em;
+  border-radius: 0.2em;
 }
 
 button {
   background: #000;
   color: #fff27d;
   border: 0 none;
-  border-radius: .2em;
-  font-size: .5em;
+  border-radius: 0.2em;
+  font-size: 0.6em;
   margin: -5vh auto 0 auto;
-  padding: .3em .6em;
+  padding: 0.3em 0.6em;
   cursor: pointer;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 button:disabled {
@@ -51,7 +58,7 @@ button:disabled {
 
 button:hover:not(:disabled) {
   box-shadow: 0 3px 10px #000;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 button:active {
@@ -71,7 +78,8 @@ button:focus {
   margin: 0 auto;
 }
 
-.hole, .mole {
+.hole,
+.mole {
   flex: 1 0 33.33%;
   overflow: hidden;
   position: relative;
@@ -82,7 +90,7 @@ button:focus {
   display: block;
   background: url(../img/dirt.svg) bottom center no-repeat;
   background-size: contain;
-  content: '';
+  content: "";
   width: 100%;
   height: 10vmax;
   position: absolute;
@@ -94,20 +102,19 @@ button:focus {
   background: url(../img/mole.svg) bottom center no-repeat;
   background-size: contain;
   top: 100%;
-  width: 15vw;
+  width: 50%;
   margin: 0 auto;
   cursor: pointer;
-  transition: all 0.4s;
+  transition: top 0.3s cubic-bezier(0.18, 0.7, 0.22, 1.1);
 }
 
 .hole.up .mole {
   top: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   h1 {
-    font-size: 12vw;
-    margin-bottom: -.5em;
+    font-size: 10vw;
   }
 }
 
@@ -124,24 +131,27 @@ button:focus {
   }
 
   .game {
-    width: 80vw;
     height: 90vh;
   }
 }
 
-@media (max-height: 650px) and (min-aspect-ratio: 5/2) {
+@media (min-aspect-ratio: 5/2), (min-width: 2500px) {
   .game {
     width: 40vw;
   }
 }
 
-@media (max-width: 600px), (max-aspect-ratio: 1/3) {
+@media (max-aspect-ratio: 2/3) {
   .hole {
     flex: 1 0 50%;
     height: 28vh;
   }
 
   .mole {
-    width: 25vw;
+    width: 28vw;
+  }
+
+  .hole.up .mole {
+    top: -22%;
   }
 }
