@@ -1,3 +1,4 @@
+const root = document.getElementsByTagName('html')[0];
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const scoreboard = document.getElementsByClassName('score')[0];
@@ -44,11 +45,13 @@ function startGame() {
   scoreboard.textContent = score;
   timeDone = false;
   startBtn.disabled = true;
+  root.classList.add('active-game');
   showMoles();
   // Stop the game after 10 seconds
   setTimeout(() => {
     timeDone = true;
     startBtn.disabled = false;
+    root.classList.remove('active-game');
   }, 10000);
 }
 
